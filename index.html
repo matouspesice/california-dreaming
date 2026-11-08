@@ -172,9 +172,14 @@
     .week-scroller, .table-scroller {
       overflow-x: auto;
       max-width: 100%;
+      width: 100%;
+      min-width: 0;
       padding-bottom: 0.4rem;
       -webkit-overflow-scrolling: touch;
       overscroll-behavior-x: contain;
+    }
+    .table-scroller {
+      display: block;
     }
     .week {
       display: grid;
@@ -357,12 +362,15 @@
 
     table {
       width: 100%;
-      min-width: 36rem;
+      min-width: 0;
       border-collapse: collapse;
       background: var(--card);
       border-radius: 18px;
       overflow: hidden;
       box-shadow: var(--shadow);
+    }
+    @media (min-width: 641px) {
+      #dny table { min-width: 36rem; }
     }
     thead th {
       text-align: left;
@@ -455,6 +463,65 @@
       .actions li { gap: 0.55rem; }
       .spine li { padding-left: 1.45rem; }
       .week a em { overflow-wrap: anywhere; }
+
+      /* Den po dni: stacked cards instead of sideways table scroll */
+      .table-scroller {
+        overflow: visible;
+        padding-bottom: 0;
+      }
+      #dny table {
+        min-width: 0;
+        width: 100%;
+        display: block;
+        background: transparent;
+        border-radius: 0;
+        box-shadow: none;
+        overflow: visible;
+      }
+      #dny thead { display: none; }
+      #dny tbody { display: block; width: 100%; }
+      #dny tr {
+        display: block;
+        width: 100%;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        box-shadow: var(--shadow);
+        margin: 0 0 0.7rem;
+        padding: 0.85rem 0.95rem 0.95rem;
+      }
+      #dny tr:last-child { margin-bottom: 0; }
+      #dny td {
+        display: block;
+        width: 100%;
+        border: 0;
+        padding: 0;
+        white-space: normal;
+      }
+      #dny td:first-child {
+        font-size: 1.2rem;
+        font-weight: 560;
+        margin-bottom: 0.35rem;
+        white-space: normal;
+        box-shadow: none;
+      }
+      #dny td:nth-child(2) { margin-bottom: 0.4rem; }
+      #dny td:nth-child(3):not(:empty) {
+        color: var(--muted);
+        font-size: 0.98rem;
+      }
+      #dny td:nth-child(3):not(:empty)::before {
+        content: "Noc · ";
+        font-family: var(--sans);
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+      #dny tr.park { box-shadow: var(--shadow), inset 3px 0 0 var(--pine); }
+      #dny tr.flight { box-shadow: var(--shadow), inset 3px 0 0 var(--clay); }
+      #dny tr.buffer { box-shadow: var(--shadow), inset 3px 0 0 #8d93a0; }
+
       #today-jump {
         right: 0.75rem;
         bottom: 0.75rem;
