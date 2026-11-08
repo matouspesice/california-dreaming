@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>California Dreaming · 15.–26. listopadu 2026</title>
+  <meta name="description" content="Plán cesty Matouše, Honzy a Michala. San Francisco, Yosemite a Sequoia, 15.–26. listopadu 2026.">
+  <meta name="theme-color" content="#13281f">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,560;0,9..144,680;1,9..144,520&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect fill='%2313281f' width='32' height='32' rx='6'/%3E%3Cpath fill='%23e7c98a' d='M16 6l2.2 6.4H25l-5.4 3.9 2.1 6.4L16 19.2 10.3 22.7l2.1-6.4L7 12.4h6.8z'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --ink: #1c1915;
+      --muted: #5e584e;
+      --paper: #f4efe4;
+      --card: #fffdf8;
+      --pine: #1e3f34;
+      --pine-deep: #13281f;
+      --gold: #a6843d;
+      --gold-soft: #e7d7b0;
+      --clay: #8c3b28;
+      --line: #e3d9c8;
+      --city: #8a6a2f;
+      --shadow: 0 16px 40px rgba(28, 25, 21, 0.06);
+      --serif: "Fraunces", Palatino, Georgia, serif;
+      --sans: "Source Sans 3", "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 1.125rem;
+      line-height: 1.55;
+      hyphens: auto;
+    }
+    ::selection { background: #e7d7b0; }
+    a { color: var(--pine); text-underline-offset: 0.18em; }
+    a:hover { color: var(--clay); }
+    img, svg { max-width: 100%; }
+
+    .skip {
+      position: absolute;
+      left: 1rem;
+      top: -4rem;
+      background: var(--card);
+      padding: 0.5rem 0.8rem;
+      z-index: 5;
+    }
+    .skip:focus { top: 1rem; }
+
+    .wrap { width: min(1080px, calc(100% - 2rem)); margin: 0 auto; min-width: 0; }
+    .wrap > *, .sheet, .sheet > * { min-width: 0; }
+    .narrow { width: min(740px, 100%); }
+
+    header.site {
+      background: var(--pine-deep);
+      color: #f6f1e7;
+      padding: 1.25rem 0 4.5rem;
+    }
+    .nav {
+      display: flex;
+      gap: 1.1rem;
+      overflow-x: auto;
+      padding-bottom: 0.2rem;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+    }
+    .nav a { color: #f6f1e7; text-decoration: none; white-space: nowrap; }
+    .nav a:hover { color: var(--gold-soft); }
+    .hero { padding-top: 2.4rem; }
+    .kicker {
+      margin: 0 0 0.6rem;
+      color: var(--gold-soft);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+    h1 {
+      font-family: var(--serif);
+      font-weight: 680;
+      font-size: clamp(3.2rem, 8vw, 6.4rem);
+      line-height: 0.9;
+      letter-spacing: -0.03em;
+      margin: 0;
+    }
+    .hero p.lede {
+      max-width: 38rem;
+      font-size: 1.28rem;
+      color: #efe7d8;
+      margin: 1.2rem 0 0;
+    }
+    .route-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem 0.7rem;
+      align-items: center;
+      margin-top: 1.6rem;
+      color: #efe7d8;
+      font-family: var(--serif);
+      font-size: 1.15rem;
+    }
+    .route-pills span.dot { color: var(--gold-soft); }
+
+    .sheet {
+      margin-top: -2.4rem;
+      display: grid;
+      gap: 1rem;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      padding: 1.25rem 1.3rem 1.35rem;
+    }
+    h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 680;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      margin: 2.6rem 0 0.8rem;
+    }
+    h3 {
+      font-family: var(--serif);
+      font-size: 1.55rem;
+      font-weight: 560;
+      letter-spacing: -0.02em;
+      margin: 0 0 0.35rem;
+      line-height: 1.15;
+    }
+    .status {
+      margin: 0 0 0.7rem;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+    .status strong { color: var(--clay); font-weight: 700; }
+    .card p:last-child, .day p:last-child { margin-bottom: 0; }
+    .who { color: var(--muted); margin: 0 0 0.7rem; }
+
+    .actions { display: grid; gap: 0.7rem; margin: 0.8rem 0 0; padding: 0; list-style: none; }
+    .actions li {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.75rem;
+      align-items: start;
+    }
+    .actions b {
+      font-family: var(--serif);
+      color: var(--pine);
+      font-size: 1.05rem;
+    }
+
+    .week-scroller, .table-scroller { overflow-x: auto; max-width: 100%; padding-bottom: 0.4rem; }
+    .week {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(7.4rem, 1fr);
+      gap: 0.45rem;
+      min-width: 100%;
+    }
+    .week a {
+      scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+      text-decoration: none;
+      color: var(--ink);
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 0.7rem 0.75rem 0.75rem;
+      min-height: 6.4rem;
+      border-top: 4px solid var(--line);
+    }
+    .week a:hover { border-color: var(--gold); }
+    .week a small { color: var(--muted); font-size: 0.82rem; letter-spacing: 0.04em; text-transform: uppercase; }
+    .week a strong { font-family: var(--serif); font-size: 1.35rem; font-weight: 560; }
+    .week a em { font-style: normal; font-size: 0.92rem; line-height: 1.25; }
+    .week a.flight { border-top-color: var(--clay); }
+    .week a.city { border-top-color: var(--gold); }
+    .week a.park { border-top-color: var(--pine); }
+    .week a.buffer { border-top-color: #8d93a0; }
+    .week a.is-today { outline: 2px solid var(--clay); outline-offset: 2px; }
+
+    .tickets { display: grid; gap: 1rem; }
+    @media (min-width: 800px) { .tickets { grid-template-columns: 1fr 1fr; } }
+    .ticket {
+      background: var(--card);
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .ticket header {
+      background: var(--pine);
+      color: #f6f1e7;
+      padding: 0.9rem 1.1rem 0.8rem;
+    }
+    .ticket header p { margin: 0.2rem 0 0; color: #d9e4de; }
+    .ticket header strong { font-family: var(--serif); font-size: 1.35rem; font-weight: 560; }
+    .leg {
+      display: grid;
+      grid-template-columns: 5.2rem 1fr;
+      gap: 0.3rem 0.8rem;
+      padding: 0.85rem 1.1rem;
+      border-top: 1px dashed var(--line);
+    }
+    .leg b { font-variant-numeric: tabular-nums; }
+    .leg span { color: var(--muted); display: block; font-size: 0.95rem; }
+    .note {
+      margin: 0;
+      padding: 0.75rem 1.1rem 1rem;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .split { display: grid; gap: 1rem; }
+    @media (min-width: 860px) {
+      .split { grid-template-columns: 1.15fr 0.85fr; align-items: start; }
+    }
+    .map-card { padding: 1rem 1rem 0.6rem; }
+    .map-card svg { display: block; width: 100%; height: auto; }
+    .legend { display: flex; flex-wrap: wrap; gap: 0.8rem 1.2rem; color: var(--muted); font-size: 0.95rem; padding: 0.2rem 0.4rem 0.8rem; }
+    .swatch { display: inline-block; width: 1.1rem; height: 0.35rem; border-radius: 99px; margin-right: 0.35rem; vertical-align: middle; }
+    .swatch.go { background: var(--pine); }
+    .swatch.stop { background: var(--clay); }
+    .swatch.pin { width: 0.55rem; height: 0.55rem; border-radius: 50%; background: var(--clay); }
+    .swatch.ghost { background: repeating-linear-gradient(90deg, var(--gold) 0 4px, transparent 4px 7px); }
+    .spine { list-style: none; margin: 0.2rem 0 0; padding: 0; }
+    .spine li { position: relative; padding: 0 0 1.35rem 1.7rem; }
+    .spine li:last-child { padding-bottom: 0.2rem; }
+    .spine li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.45rem;
+      width: 0.72rem;
+      height: 0.72rem;
+      border-radius: 50%;
+      background: var(--pine);
+    }
+    .spine li:first-child::before,
+    .spine li:last-child::before { background: var(--clay); }
+    .spine li:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      left: 0.3rem;
+      top: 1.25rem;
+      bottom: 0;
+      width: 2px;
+      background: #c9d5ce;
+    }
+    .spine .place { font-family: var(--serif); font-size: 1.55rem; display: block; line-height: 1.15; }
+    .spine .hop { color: var(--muted); display: block; margin-top: 0.15rem; }
+    .ghost-note { margin: 1rem 0 0; color: var(--muted); }
+
+    table {
+      width: 100%;
+      min-width: 36rem;
+      border-collapse: collapse;
+      background: var(--card);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    thead th {
+      text-align: left;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 700;
+      padding: 0.85rem 1rem;
+      background: #f7f3ea;
+    }
+    td {
+      padding: 0.85rem 1rem;
+      border-top: 1px solid var(--line);
+      vertical-align: top;
+    }
+    td:first-child { font-family: var(--serif); white-space: nowrap; }
+    tr.park td:first-child { box-shadow: inset 3px 0 0 var(--pine); }
+    tr.flight td:first-child { box-shadow: inset 3px 0 0 var(--clay); }
+    tr.buffer td:first-child { box-shadow: inset 3px 0 0 #8d93a0; }
+
+    .day {
+      padding: 1.2rem 0 1.3rem;
+      border-top: 1px solid var(--line);
+    }
+    .day.is-today { background: #fff8ea; margin: 0 -1rem; padding-left: 1rem; padding-right: 1rem; border-radius: 16px; }
+    .meta { color: var(--muted); margin: 0 0 0.6rem; }
+    .day ul, .prose ul { padding-left: 1.15rem; }
+    .day li + li, .prose li + li { margin-top: 0.35rem; }
+    .tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--pine);
+      margin-bottom: 0.25rem;
+    }
+    .tag.hard { color: var(--clay); }
+
+    .cols { display: grid; gap: 1rem; }
+    @media (min-width: 800px) { .cols { grid-template-columns: 1fr 1fr; } }
+    .plain {
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+      padding: 0;
+    }
+
+    footer {
+      margin-top: 3rem;
+      padding: 1.5rem 0 2.5rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+      border-top: 1px solid var(--line);
+    }
+    #today-jump[hidden] { display: none; }
+    #today-jump {
+      position: fixed;
+      right: 1rem;
+      bottom: 1rem;
+      background: var(--clay);
+      color: white;
+      text-decoration: none;
+      padding: 0.7rem 0.9rem;
+      border-radius: 999px;
+      box-shadow: var(--shadow);
+      z-index: 4;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+    @media print {
+      header.site { background: white; color: black; padding-bottom: 1rem; }
+      .nav, #today-jump { display: none; }
+      .card, .ticket, table { box-shadow: none; }
+      body { background: white; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#prehled">Přeskočit na přehled</a>
+  <header class="site">
+    <div class="wrap">
+      <nav class="nav" aria-label="Na stránce">
+        <a href="#prehled">Přehled</a>
+        <a href="#tyden">Tento týden</a>
+        <a href="#lety">Lety</a>
+        <a href="#trasa">Trasa</a>
+        <a href="#dny">Dny</a>
+        <a href="#spani">Spaní</a>
+        <a href="#domluvit">Domluvit</a>
+      </nav>
+      <div class="hero">
+        <p class="kicker">15.–26. listopadu 2026</p>
+        <h1>California<br>Dreaming</h1>
+        <p class="lede">Matouš, Honza a Michal. Nejdřív San Francisco, potom Yosemite a sekvoje, ve čtvrtek ráno odlet na páteční promoci v Innsbrucku.</p>
+        <p class="route-pills">
+          <span>San Francisco</span><span class="dot">·</span>
+          <span>Yosemite</span><span class="dot">·</span>
+          <span>Sequoia</span><span class="dot">·</span>
+          <span>San Francisco</span>
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap" id="prehled">
+    <div class="sheet">
+      <section class="card">
+        <p class="status"><strong>Návrh k domluvě.</strong> Spaní ještě není rezervované. Časy Honzova letu doplníme, jakmile je budeme znát.</p>
+        <p>Společné okno je sobota 21. 11. odpoledne až středa 25. 11. večer. Ve čtvrtek 26. 11. v 8:20 Matouš odlétá ze San Francisca, v pátek 27. 11. v 13:10 je v Innsbrucku.</p>
+        <p>Původní kolečko z <a href="https://mapy.com/s/jefohonera">Mapy.com</a> má 2&nbsp;403 km a 26–28 hodin jízdy: letiště, Údolí smrti, Sequoia, Yosemite, Tahoe, Silicon Valley. Tahle trasa má kolem 1&nbsp;000 km a 16 hodin za volantem, a jsou v ní dva dny, kdy se jde pěšky.</p>
+      </section>
+
+      <section aria-label="Přehled dní">
+        <div class="week-scroller">
+          <div class="week">
+            <a class="flight" href="#den-15" data-date="2026-11-15"><small>ne 15.</small><strong>15</strong><em>Přílet 19:35</em></a>
+            <a class="city" href="#sf" data-date="2026-11-16"><small>po 16.</small><strong>16</strong><em>Měkký den</em></a>
+            <a class="city" href="#sf" data-date="2026-11-17"><small>út 17.</small><strong>17</strong><em>Kolo, most</em></a>
+            <a class="city" href="#sf" data-date="2026-11-18"><small>st 18.</small><strong>18</strong><em>Presidio</em></a>
+            <a class="city" href="#sf" data-date="2026-11-19"><small>čt 19.</small><strong>19</strong><em>Město</em></a>
+            <a class="city" href="#sf" data-date="2026-11-20"><small>pá 20.</small><strong>20</strong><em>Nákup, řetězy</em></a>
+            <a class="park" href="#den-21" data-date="2026-11-21"><small>so 21.</small><strong>21</strong><em>Honza, auto</em></a>
+            <a class="park" href="#den-22" data-date="2026-11-22"><small>ne 22.</small><strong>22</strong><em>Yosemite</em></a>
+            <a class="park" href="#den-23" data-date="2026-11-23"><small>po 23.</small><strong>23</strong><em>Nevada Fall</em></a>
+            <a class="park" href="#den-24" data-date="2026-11-24"><small>út 24.</small><strong>24</strong><em>Sekvoje, návrat</em></a>
+            <a class="buffer" href="#den-25" data-date="2026-11-25"><small>st 25.</small><strong>25</strong><em>Rezerva</em></a>
+            <a class="flight" href="#den-26" data-date="2026-11-26"><small>čt 26.</small><strong>26</strong><em>Odlet 8:20</em></a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section id="tyden">
+      <h2>Tento týden</h2>
+      <div class="card">
+        <ol class="actions">
+          <li><b>01</b><span><strong>ESTA.</strong> Na vstup bez víza se schvaluje dopředu. Na letišti už je pozdě. Platí pro Matouše i pro Honzu, jestli letí z Evropy jako nerezidenti.</span></li>
+          <li><b>02</b><span><strong>Spaní v Yosemite na neděli 22. 11.</strong> Upper Pines se rezervuje na <a href="https://www.recreation.gov/">Recreation.gov</a> a na Díkůvzdání mizí. Camp 4 pouští místa týden dopředu, tedy v neděli 15. 11., v den Matoušova příletu. Ať to hlídá Michal. Když stan nebude, Yosemite Valley Lodge nebo Curry Village, obojí tu noc ještě jede. Curry zavírá až 29. 11.</span></li>
+          <li><b>03</b><span><strong>Noc v Three Rivers na pondělí 23. 11.</strong> se stornem zdarma, a záloha v Oakhurst. V pátek 20. 11. podle silnice jedno z toho zrušit.</span></li>
+          <li><b>04</b><span><strong>Auto sobota 21. 11. až čtvrtek 26. 11. ráno</strong>, ideálně výdej i vrácení na SFO. V podmínkách ověřit, že půjčovna dovolí sněhové řetězy. K českému řidičáku půjčovna občas chce i mezinárodní.</span></li>
+          <li><b>05</b><span><strong>Vstup do parků.</strong> Yosemite i Sequoia berou 35&nbsp;USD za auto a k tomu 100&nbsp;USD za každého nerezidenta od 16 let, v každém parku znovu. Tři nerezidenti a dva parky jsou 670&nbsp;USD. Yosemite Conservancy uvádí nerezidentskou kartu America the Beautiful za 250&nbsp;USD na auto, na všechny parky, bez příplatku za osobu. Než se zaplatí, ověřit na Recreation.gov, že pořád kryje celé auto.</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="lety">
+      <h2>Lety</h2>
+      <p class="narrow">Časy jsou místní, z potvrzení Lufthansy. V letence je Economy Light: palubní zavazadlo do 8 kg a osobní věc, kufr v ceně není. Boty ať jedou na nohou. Stan a spacák ať jsou u Michala, nebo se půjčí ve městě v REI.</p>
+      <div class="tickets">
+        <article class="ticket">
+          <header>
+            <strong>Tam · neděle 15. 11.</strong>
+            <p>Innsbruck 10:00 → San Francisco 19:35 · 18 h 35 min · 1 přestup</p>
+          </header>
+          <div class="leg">
+            <b>10:00</b>
+            <div>Innsbruck, autobus LH3831<span>příjezd Mnichov 12:45, terminál 2</span></div>
+          </div>
+          <div class="leg">
+            <b>16:35</b>
+            <div>Mnichov, LH458, Airbus A380<span>příjezd San Francisco 19:35, International Terminal</span></div>
+          </div>
+          <p class="note">Michal vyzvedává na příletech mezinárodního terminálu. V San Franciscu je v tu chvíli večer, v Evropě půl páté ráno.</p>
+        </article>
+        <article class="ticket">
+          <header>
+            <strong>Zpět · čtvrtek 26. 11.</strong>
+            <p>San Francisco 8:20 → Innsbruck 13:10 v pátek · 19 h 50 min · 2 přestupy</p>
+          </header>
+          <div class="leg">
+            <b>8:20</b>
+            <div>San Francisco, terminál 3, LH7785 United<span>příjezd Chicago O'Hare 14:49, terminál 1</span></div>
+          </div>
+          <div class="leg">
+            <b>18:00</b>
+            <div>Chicago, LH9269 United<span>příjezd Mnichov v pátek 9:35, terminál 2</span></div>
+          </div>
+          <div class="leg">
+            <b>10:25</b>
+            <div>Mnichov, autobus LH3832<span>příjezd Innsbruck v pátek 13:10. V pátek je promoce.</span></div>
+          </div>
+          <p class="note">Odbavení v aplikaci ve středu, včetně údajů pro vstup do USA. Na terminálu 3 být v 6:00. Kufr se neodevzdává.</p>
+        </article>
+      </div>
+      <div class="card" style="margin-top: 1rem">
+        <h3>Honza</h3>
+        <p>Přilétá v sobotu a odlétá v neděli. Přesné časy v mailu nejsou. Sobota, která sedí na domluvu „v sobotu auto a z letiště rovnou na výlet“, je <strong>21. listopadu</strong>. Nedělní odlet v tomhle plánu počítám jako <strong>29. listopadu</strong>, až po Matoušově odletu. Neděle 22. 11. je druhý den v Yosemite. Když má Honza letět už tu neděli, program se celý překreslí.</p>
+      </div>
+    </section>
+
+    <section id="trasa">
+      <h2>Trasa</h2>
+      <div class="split">
+        <div class="card">
+          <ol class="spine">
+            <li>
+              <span class="place">San Francisco</span>
+              <span class="hop">4–4,5 h · silnice 140 přes Merced · asi 310 km</span>
+            </li>
+            <li>
+              <span class="place">Yosemite Valley</span>
+              <span class="hop">neděle v údolí, pondělí ráno Nevada Fall, pak 4–4,5 h na jih</span>
+            </li>
+            <li>
+              <span class="place">Sequoia</span>
+              <span class="hop">noc v Three Rivers, úterý ráno General Sherman, pak 5 h zpět</span>
+            </li>
+            <li>
+              <span class="place">San Francisco</span>
+              <span class="hop">úterý večer, středa volná, čtvrtek odlet v 8:20</span>
+            </li>
+          </ol>
+          <p class="ghost-note">Mimo tuhle cestu zůstávají Údolí smrti a Tahoe.</p>
+        </div>
+        <div class="prose">
+          <div class="card">
+            <h3>Proč zrovna takhle</h3>
+            <p>Yosemite je nejblíž a Michal chtěl Half Dome. Sequoia je odtud po západní straně hor, bez přechodu přes hřeben. Zpět do města se jede v úterý, den před největším provozem Díkůvzdání. Středa zůstává prázdná schválně.</p>
+            <p>Lana na Half Dome jsou od poloviny října dole. Stav z 6. 11. 2026 to pořád říká. Stejná cesta vede na Nevada Fall a odtud je stěna vidět. Na vrchol se v listopadu nejde, povolení na lana se v tuhle dobu nevydává.</p>
+            <p>Tioga Pass, silnice z Yosemite na Tahoe, byla 6. 11. otevřená. Mezi 11. a 12. 11. má přijít další sníh a před Díkůvzdáním se tahle cesta skoro každý rok zavře. Plán na ní nestojí. Vjezd do údolí po silnici 140 zavřený nebývá.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cols" style="margin-top: 1rem">
+        <article class="card">
+          <h3>Údolí smrti</h3>
+          <p>Z letiště je to 825 km a 8 hodin 10 minut, z mapy. Další den by byl přejezd do Sequoie. V okně, které máme, by to sebralo jediný volný den na hike v Yosemite. V listopadu je tam příjemně, jen je to příliš daleko.</p>
+        </article>
+        <article class="card">
+          <h3>Tahoe a Silicon Valley</h3>
+          <p>Tahoe bez Tiogy znamená sjet z hor, objet je údolím a vyjet znovu, 5 až 6 hodin. Návrat by padl na středu 25. 11. Silicon Valley na mapě je spíš cesta domů než cíl. Když Honza zůstane do 29. 11., Tahoe se dá udělat v pátek a sobotu s Michalem, podle sněhu, po silnici 50. To už je mimo společný plán.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="dny">
+      <h2>Den po dni</h2>
+      <div class="table-scroller">
+        <table>
+          <thead>
+            <tr><th>Den</th><th>Program</th><th>Noc</th></tr>
+          </thead>
+          <tbody>
+            <tr class="flight"><td>ne 15.</td><td>Matouš přistává v 19:35, International Terminal. Michal na příletech.</td><td>San Francisco</td></tr>
+            <tr><td>po 16. – pá 20.</td><td>Matouš a Michal. Město, dvě kola, v pátek nákup a řetězy.</td><td>San Francisco</td></tr>
+            <tr class="park"><td>so 21.</td><td>Honza, auto, jídlo na cestu. Když je venku z letiště do 13:00, noc v Maripose.</td><td>SF, nebo Mariposa</td></tr>
+            <tr class="park"><td>ne 22.</td><td>Přejezd po 140, odpoledne dno údolí. Tunnel View, louky, Yosemite Fall.</td><td>Yosemite Valley</td></tr>
+            <tr class="park"><td>po 23.</td><td>Ráno Nevada Fall. Odpoledne na jih. Nejdelší den.</td><td>Three Rivers</td></tr>
+            <tr class="park"><td>út 24.</td><td>General Sherman a Congress Trail. V poledne dolů, odpoledne zpět do Bay Area.</td><td>San Francisco</td></tr>
+            <tr class="buffer"><td>st 25.</td><td>Prázdný den. Odbavení, balení. Kdyby úterý sklouzlo, dožene se to tady.</td><td>u Michala, nebo u SFO</td></tr>
+            <tr class="flight"><td>čt 26.</td><td>Odvoz na terminál 3 k 6:00. Odlet 8:20.</td><td>letadlo</td></tr>
+            <tr><td>pá 27.</td><td>Innsbruck 13:10, promoce.</td><td>Innsbruck</td></tr>
+            <tr><td>ne 29.</td><td>Honzův odlet, čas neznáme. Předpoklad, viz lety.</td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="sf" class="day" data-date="2026-11-16">
+        <p class="tag">Než přijede Honza</p>
+        <h3>Neděle 15. až pátek 20. · San Francisco</h3>
+        <p class="who">Matouš a Michal. Program je volný, ať se domluví na místě.</p>
+        <ul>
+          <li id="den-15" data-date="2026-11-15"><strong>Neděle 15.</strong> Přílet, jídlo, spánek. Vydržet aspoň do devíti, ať se noc neprotočí.</li>
+          <li data-date="2026-11-16"><strong>Pondělí 16.</strong> Měkký den. Světlo, káva, krátká procházka. Golden Gate z Crissy Field, jen když na to budou síly.</li>
+          <li data-date="2026-11-17"><strong>Úterý 17.</strong> Kolo přes Golden Gate do Sausalita a trajekt zpět. Plochá cesta, kolem 25 km.</li>
+          <li data-date="2026-11-18"><strong>Středa 18.</strong> Kolo nebo pěšky. Presidio, Crissy Field, Lands End, západ slunce nad mostem.</li>
+          <li data-date="2026-11-19"><strong>Čtvrtek 19.</strong> Město bez seznamu. Ferry Building, Mission, Twin Peaks.</li>
+          <li data-date="2026-11-20"><strong>Pátek 20.</strong> Nákup jídla na neděli až úterý, řetězy, sbalit večer. Předpověď pro Yosemite Valley a Three Rivers. Podle ní stan, nebo střecha. A stav <a href="https://www.nps.gov/yose/planyourvisit/conditions.htm">silnic v Yosemite</a> a <a href="https://www.nps.gov/seki/planyourvisit/conditions.htm">Generals Highway v Sequoii</a>.</li>
+        </ul>
+      </div>
+
+      <article class="day" id="den-21" data-date="2026-11-21">
+        <p class="tag">Road trip</p>
+        <h3>Sobota 21. · Honza a auto</h3>
+        <p class="meta">Slunce v horách zapadá kolem půl páté. Do údolí se dnes za světla nestihne, pokud Honza není venku z letiště dopoledne.</p>
+        <ul>
+          <li>Vyzvednout auto na SFO, naložit Honzu, nákup doplnit cestou nebo ještě ve městě.</li>
+          <li>Když je venku z terminálu do 13:00: odjezd po 140 a noc v Maripose. Ráno je do údolí hodina a čtvrt, a neděle začne v parku, ne v autě.</li>
+          <li>Když přistane později: noc ve San Franciscu. V neděli budík v 5:45, odjezd v 6:30.</li>
+        </ul>
+      </article>
+
+      <article class="day" id="den-22" data-date="2026-11-22">
+        <p class="tag">Yosemite</p>
+        <h3>Neděle 22. · údolí</h3>
+        <p class="meta">Jízda 4 až 4,5 hodiny, kolem 310 km, po silnici 140 přes Merced a Mariposu. Nižší vjezd, Arch Rock. Vstup na hodinu se v roce 2026 nerezervuje, platí se na bráně.</p>
+        <ul>
+          <li>Ze San Francisca odjezd v 6:30, v údolí kolem 11:00. Z Mariposy odjezd v 8:00 a v údolí dopoledne.</li>
+          <li>Tunnel View, Valley View, Lower Yosemite Fall a Cook's Meadow. Half Dome je z louky vidět celý, včetně stěny, na kterou se nejde.</li>
+          <li>Odbavit spaní, najíst se, spát brzo. Pondělí je ten dlouhý den.</li>
+          <li>Vodopády v listopadu tečou málo. Jde se kvůli žule, El Capitanu a Half Dome.</li>
+        </ul>
+      </article>
+
+      <article class="day" id="den-23" data-date="2026-11-23">
+        <p class="tag hard">Nejdelší den</p>
+        <h3>Pondělí 23. · Nevada Fall, potom na jih</h3>
+        <p class="meta">Hike 5 až 7 hodin a pak 4 až 4,5 hodiny autem. Svítá kolem půl sedmé, start v 7:30, dole chceme být brzy odpoledne.</p>
+        <ul>
+          <li>7:30 u Happy Isles. Cíl je okruh na Nevada Fall: Mist Trail nahoru, John Muir Trail dolů, asi 11 km a 600 výškových metrů. Z Nevada Fall je Half Dome přímo nad vámi. To je ten hike, který z Half Dome v listopadu zbývá.</li>
+          <li>Když je v 10:30 pořád daleko k Nevada Fall, otáčí se na Vernal Fall. To je asi 5 km a 300 výškových metrů, 2 až 3 hodiny. Pravidlo je kvůli světlu, ne kvůli tempu.</li>
+          <li>Schody na Mist Trail jsou kluzké, i když voda teče málo. Namrzlé schody znamenají John Muir Trail, který je delší a míň exponovaný.</li>
+          <li>Dole ve 13:30, odjezd ve 14:00 po silnici 41 na jih. Mariposa Grove je po cestě. Zastávka u vjezdu, dovnitř jen s hodinou navíc. Velké stromy jsou v plánu na úterý.</li>
+          <li>Noc v Three Rivers, když se z parku vyjede do tří. Jinak Oakhurst, hodinu od údolí, a úterý začíná dřív.</li>
+          <li>El Capitan Bridge má ve všední den mezi 7 a 19 zdržení kolem 15 minut. Na tenhle hike se přes něj jet nemusí.</li>
+        </ul>
+      </article>
+
+      <article class="day" id="den-24" data-date="2026-11-24">
+        <p class="tag">Sequoia</p>
+        <h3>Úterý 24. · General Sherman a návrat</h3>
+        <p class="meta">Giant Forest leží kolem 2&nbsp;000 m. Ráno v Three Rivers může být mikina a nahoře mráz. Rukavice a čepice do batohu.</p>
+        <ul>
+          <li>Z Three Rivers vyjet v 7:30. Na General Sherman je to asi hodina zatáček po Generals Highway. Když je silnice zavřená nebo chce řetězy, které nechceme nasazovat, přepíná se na zálohu: Mariposa Grove a dřívější návrat do města. Sekvoje jsou i tam, jen menší háj, pořád v Yosemite.</li>
+          <li>Congress Trail je rovina mezi největšími stromy, asi 3 km, 1,5 až 2 hodiny, plus krátká cesta k Shermanovi.</li>
+          <li>V poledne dolů do podhůří. Na Bay Area po 198, 99 a 580 to je 4,5 až 5,5 hodiny. Cíl je být ve městě do sedmi.</li>
+          <li>Když provoz naroste, noc v Pleasantonu nebo Dublinu u 580. Na letiště odtud zbývá kolem 40 minut a středa je na to stavěná.</li>
+        </ul>
+      </article>
+
+      <article class="day" id="den-25" data-date="2026-11-25">
+        <p class="tag">Rezerva</p>
+        <h3>Středa 25. · město, nic nutného</h3>
+        <p class="meta">Den před Díkůvzdáním. Na dálnicích do Bay Area je to nejhorší den v roce na dlouhý přejezd. Proto v plánu žádný park není.</p>
+        <ul>
+          <li>Vrátit věci, projít se, večeře. Odbavení do aplikace, pas a ESTA do kapsy na zítra.</li>
+          <li>Budík ve čtvrtek ve 4:30. Odjezd v 5:00, terminál 3 v 6:00.</li>
+          <li>Když auto zůstává Honzovi a Michalovi, Michal veze Matouše na odlet a jede dál. Když půjčení končí s Matoušem, auto se vrací ve středu večer na SFO a spí se u letiště.</li>
+        </ul>
+      </article>
+
+      <article class="day" id="den-26" data-date="2026-11-26">
+        <p class="tag hard">Odlet</p>
+        <h3>Čtvrtek 26. · San Francisco 8:20</h3>
+        <p>Terminál 3, let United pro Lufthansu do Chicaga, večer dál do Mnichova, v pátek autobus do Innsbrucku. Na místě v 13:10. Díkůvzdání je tenhle den v Americe, promoce je v pátek v Innsbrucku.</p>
+        <p>Pátek a sobota, jestli Honza letí až v neděli 29. 11., patří jemu a Michalovi. Tahoe po silnici 50 je z města 3,5 až 4 hodiny, Emerald Bay jen když je západní břeh otevřený. Sníh rozhodne. Do společného plánu to nepatří.</p>
+      </article>
+    </section>
+
+    <section id="spani">
+      <h2>Spaní, zima, vstup</h2>
+      <div class="cols">
+        <article class="card">
+          <h3>Kde se spí</h3>
+          <ul>
+            <li><strong>15.–20. a ideálně i 21. a 24.</strong> U Michala ve San Franciscu.</li>
+            <li><strong>21., jen při brzkém příletu.</strong> Mariposa, před parkem.</li>
+            <li><strong>22.</strong> Yosemite Valley. Jedna noc. Upper Pines nebo Camp 4, obojí se rezervuje. Lower Pines a North Pines jsou zavřené. V údolí bývá v noci kolem nuly, občas mráz.</li>
+            <li><strong>23.</strong> Three Rivers, pod Sequoií. Níž, noci mírnější, stan i pokoj dávají smysl. Nahoře v Giant Forest se v tuhle dobu obvykle nespí, Lodgepole zavírá dřív.</li>
+            <li><strong>25.</strong> U Michala, nebo u SFO, podle toho, komu zůstane auto.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Stan, nebo střecha</h3>
+          <p>Stan je v plánu tam, kde je v pátek suchá noc a spacák drží pod nulou, s podložkou pod tělem. Yosemite Valley Lodge, Curry Village nebo pokoj v El Portalu bereme, když má pršet, nebo když spacák končí nad nulou. V Three Rivers stačí obyčejný pokoj nebo stan, mokro rozhoduje stejně.</p>
+          <p>V kempu patří jídlo, odpadky a voňavá kosmetika do medvědího boxu. V autě přes noc nic k jídlu. Medvědi jsou v listopadu pořád aktivní.</p>
+        </article>
+      </div>
+      <div class="card" style="margin-top: 1rem">
+        <h3>S sebou do hor</h3>
+        <p>Pohorky, vrstvy, čepice, rukavice, pláštěnka, čelovka, dva litry vody na pondělní hike, svačina z pátku, řetězy, pas, řidičák, nabitá powerbanka. V údolí bývá signál špatný. Mapu i tuhle stránku otevřít ještě ve městě.</p>
+      </div>
+    </section>
+
+    <section id="domluvit">
+      <h2>Ještě domluvit</h2>
+      <div class="card">
+        <ul>
+          <li>Přesný čas Honzova příletu v sobotu 21. 11. a který nedělní odlet platí.</li>
+          <li>Jestli auto po čtvrtečním ránu zůstane Honzovi a Michalovi.</li>
+          <li>Nevada Fall celý, nebo v pondělí jen Vernal Fall a víc času na cestu na jih.</li>
+          <li>V pátek 20. 11. finální volba: Sequoia, nebo záložní Mariposa Grove, podle Generals Highway.</li>
+          <li>Tahoe v pátek 27. a sobotu 28. pro Honzu a Michala, až bude jasné, jestli Honza zůstává do 29. 11.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>Sestaveno 8. listopadu 2026. Lety podle potvrzení Lufthansy, místní časy. Yosemite podle podmínek parku z 6. 11. 2026: Tioga a Glacier Point otevřené, lana na Half Dome dole, Upper Pines a Camp 4 na rezervaci, Lower a North Pines zavřené. Vstup podle sazeb National Park Service pro rok 2026. Silnice se mají večer před jízdou zkontrolovat znovu, sníh mezi 11. a 12. 11. může Tiogu zavřít.</p>
+      <p><a href="https://mapy.com/s/jefohonera">Původní kolečko</a> · <a href="https://www.nps.gov/yose/planyourvisit/conditions.htm">Yosemite, stav silnic</a> · <a href="https://www.nps.gov/seki/planyourvisit/conditions.htm">Sequoia, stav silnic</a> · <a href="https://www.recreation.gov/">Recreation.gov</a></p>
+    </div>
+  </footer>
+
+  <a id="today-jump" hidden href="#prehled">Dnešní den</a>
+  <script>
+    (function () {
+      var key = new Date().toLocaleDateString("en-CA", { timeZone: "America/Los_Angeles" });
+      var nodes = document.querySelectorAll("[data-date]");
+      var target = null;
+      for (var i = 0; i < nodes.length; i++) {
+        if (nodes[i].getAttribute("data-date") === key) {
+          nodes[i].classList.add("is-today");
+          if (!target && nodes[i].id) target = nodes[i];
+        }
+      }
+      if (target) {
+        var jump = document.getElementById("today-jump");
+        jump.hidden = false;
+        jump.setAttribute("href", "#" + target.id);
+      }
+    })();
+  </script>
+</body>
+</html>
