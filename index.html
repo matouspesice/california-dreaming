@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>California Dreaming · 15.–26. listopadu 2026</title>
-  <meta name="description" content="Plán cesty Matouše, Honzy a Michaela. San Francisco, Yosemite, Údolí smrti a Tahoe, 15.–26. listopadu 2026.">
+  <title>California Dreaming · road trip 21.–25. 11. 2026</title>
+  <meta name="description" content="Road trip Matouše, Honzy a Michaela: San Francisco → Údolí smrti → Tahoe → Yosemite a zpět, 21.–25. listopadu 2026.">
   <meta name="theme-color" content="#13281f">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,17 +22,13 @@
       --gold-soft: #e7d7b0;
       --clay: #8c3b28;
       --line: #e3d9c8;
-      --city: #8a6a2f;
       --shadow: 0 16px 40px rgba(28, 25, 21, 0.06);
       --serif: "Fraunces", Palatino, Georgia, serif;
       --sans: "Source Sans 3", "Segoe UI", sans-serif;
     }
 
     * { box-sizing: border-box; }
-    html {
-      scroll-behavior: smooth;
-      overflow-x: clip;
-    }
+    html { scroll-behavior: smooth; overflow-x: clip; }
     body {
       margin: 0;
       background: var(--paper);
@@ -43,7 +39,6 @@
       hyphens: auto;
       overflow-x: clip;
       overflow-wrap: break-word;
-      word-wrap: break-word;
     }
     ::selection { background: #e7d7b0; }
     a { color: var(--pine); text-underline-offset: 0.18em; overflow-wrap: anywhere; }
@@ -56,30 +51,28 @@
       top: -4rem;
       background: var(--card);
       padding: 0.5rem 0.8rem;
-      z-index: 5;
+      z-index: 6;
     }
     .skip:focus { top: 1rem; }
 
     .wrap { width: min(1080px, calc(100% - 2rem)); margin: 0 auto; min-width: 0; max-width: 100%; }
-    .wrap > *, .sheet, .sheet > *, .card, .ticket, .day, .split, .cols, .tickets, .prose { min-width: 0; max-width: 100%; }
-    .narrow { width: min(740px, 100%); max-width: 100%; }
+    .wrap > *, .card, .day, .split, .cols, .tickets, .prose { min-width: 0; max-width: 100%; }
+    .narrow { width: min(740px, 100%); }
 
     header.site {
       background: var(--pine-deep);
       color: #f6f1e7;
-      padding: 1.25rem 0 4.5rem;
+      padding: 1.25rem 0 4.2rem;
     }
     .nav {
       display: flex;
       gap: 1.1rem;
       overflow-x: auto;
-      padding-bottom: 0.2rem;
       font-size: 0.95rem;
-      letter-spacing: 0.02em;
     }
     .nav a { color: #f6f1e7; text-decoration: none; white-space: nowrap; }
     .nav a:hover { color: var(--gold-soft); }
-    .hero { padding-top: 2.4rem; }
+    .hero { padding-top: 2.2rem; }
     .kicker {
       margin: 0 0 0.6rem;
       color: var(--gold-soft);
@@ -95,10 +88,9 @@
       line-height: 0.92;
       letter-spacing: -0.03em;
       margin: 0;
-      overflow-wrap: anywhere;
     }
     .hero p.lede {
-      max-width: 38rem;
+      max-width: 40rem;
       font-size: clamp(1.05rem, 3.6vw, 1.28rem);
       color: #efe7d8;
       margin: 1.2rem 0 0;
@@ -108,18 +100,14 @@
       flex-wrap: wrap;
       gap: 0.45rem 0.7rem;
       align-items: center;
-      margin-top: 1.6rem;
+      margin-top: 1.5rem;
       color: #efe7d8;
       font-family: var(--serif);
       font-size: clamp(1rem, 3.4vw, 1.15rem);
     }
     .route-pills span.dot { color: var(--gold-soft); }
 
-    .sheet {
-      margin-top: -2.4rem;
-      display: grid;
-      gap: 1rem;
-    }
+    .sheet { margin-top: -2.2rem; display: grid; gap: 1rem; }
     .card {
       background: var(--card);
       border: 1px solid var(--line);
@@ -134,8 +122,7 @@
       font-weight: 680;
       letter-spacing: -0.03em;
       line-height: 1.05;
-      margin: 2.6rem 0 0.8rem;
-      overflow-wrap: anywhere;
+      margin: 2.4rem 0 0.8rem;
     }
     h3 {
       font-family: var(--serif);
@@ -144,115 +131,92 @@
       letter-spacing: -0.02em;
       margin: 0 0 0.35rem;
       line-height: 1.15;
-      overflow-wrap: anywhere;
     }
-    .status {
-      margin: 0 0 0.7rem;
-      color: var(--muted);
-      font-size: 0.98rem;
-    }
+    .status { margin: 0 0 0.7rem; color: var(--muted); font-size: 0.98rem; }
     .status strong { color: var(--clay); font-weight: 700; }
     .card p:last-child, .day p:last-child { margin-bottom: 0; }
-    .who { color: var(--muted); margin: 0 0 0.7rem; }
 
-    .actions { display: grid; gap: 0.7rem; margin: 0.8rem 0 0; padding: 0; list-style: none; }
-    .actions li {
-      display: grid;
-      grid-template-columns: auto minmax(0, 1fr);
-      gap: 0.75rem;
-      align-items: start;
+    /* App-like sticky trip dock */
+    .trip-dock {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      margin: 0.2rem 0 0;
+      padding: 0.55rem 0;
+      background: color-mix(in srgb, var(--paper) 88%, transparent);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid color-mix(in srgb, var(--line) 80%, transparent);
     }
-    .actions li > span { min-width: 0; overflow-wrap: break-word; }
-    .actions b {
-      font-family: var(--serif);
-      color: var(--pine);
-      font-size: 1.05rem;
-    }
-
-    .week-scroller, .table-scroller {
-      overflow-x: auto;
-      max-width: 100%;
-      width: 100%;
-      min-width: 0;
-      padding-bottom: 0.4rem;
-      -webkit-overflow-scrolling: touch;
-      overscroll-behavior-x: contain;
-    }
-    .table-scroller {
-      display: block;
-    }
-    .week {
-      display: grid;
-      grid-auto-flow: column;
-      grid-auto-columns: minmax(7.4rem, 1fr);
-      gap: 0.45rem;
-      min-width: 100%;
-    }
-    .week a {
-      scroll-snap-align: start;
+    .trip-dock-track {
       display: flex;
-      flex-direction: column;
-      gap: 0.15rem;
+      align-items: center;
+      gap: 0.35rem;
+      overflow-x: auto;
+      padding: 0.15rem 0.1rem 0.35rem;
+      -webkit-overflow-scrolling: touch;
+    }
+    .trip-dock a.stop {
+      flex: 0 0 auto;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.15rem 0.45rem;
+      align-items: center;
       text-decoration: none;
       color: var(--ink);
       background: var(--card);
       border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 0.7rem 0.75rem 0.75rem;
-      min-height: 6.4rem;
-      border-top: 4px solid var(--line);
+      border-radius: 999px;
+      padding: 0.4rem 0.75rem 0.4rem 0.4rem;
+      min-width: 0;
+      transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
     }
-    .week a:hover { border-color: var(--gold); }
-    .week a small { color: var(--muted); font-size: 0.82rem; letter-spacing: 0.04em; text-transform: uppercase; }
-    .week a strong { font-family: var(--serif); font-size: 1.35rem; font-weight: 560; }
-    .week a em { font-style: normal; font-size: 0.92rem; line-height: 1.25; }
-    .week a.flight { border-top-color: var(--clay); }
-    .week a.city { border-top-color: var(--gold); }
-    .week a.park { border-top-color: var(--pine); }
-    .week a.buffer { border-top-color: #8d93a0; }
-    .week a.is-today { outline: 2px solid var(--clay); outline-offset: 2px; }
-
-    .tickets { display: grid; gap: 1rem; }
-    @media (min-width: 800px) { .tickets { grid-template-columns: 1fr 1fr; } }
-    .ticket {
-      background: var(--card);
-      border-radius: 18px;
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-    .ticket header {
+    .trip-dock a.stop .badge {
+      width: 1.55rem;
+      height: 1.55rem;
+      border-radius: 50%;
       background: var(--pine);
-      color: #f6f1e7;
-      padding: 0.9rem 1.1rem 0.8rem;
-    }
-    .ticket header p { margin: 0.2rem 0 0; color: #d9e4de; }
-    .ticket header strong { font-family: var(--serif); font-size: 1.35rem; font-weight: 560; }
-    .leg {
+      color: #fffdf8;
+      font-family: var(--serif);
+      font-size: 0.92rem;
       display: grid;
-      grid-template-columns: 4.6rem minmax(0, 1fr);
-      gap: 0.3rem 0.8rem;
-      padding: 0.85rem 1.1rem;
-      border-top: 1px dashed var(--line);
+      place-items: center;
     }
-    .leg > div { min-width: 0; overflow-wrap: break-word; }
-    .leg b { font-variant-numeric: tabular-nums; }
-    .leg span { color: var(--muted); display: block; font-size: 0.95rem; }
-    .note {
-      margin: 0;
-      padding: 0.75rem 1.1rem 1rem;
+    .trip-dock a.stop[data-stop="sf"] .badge { background: var(--clay); }
+    .trip-dock a.stop .label {
+      font-family: var(--serif);
+      font-size: 0.95rem;
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+    .trip-dock a.stop .when {
+      grid-column: 2;
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
       color: var(--muted);
-      font-size: 0.98rem;
+      white-space: nowrap;
+    }
+    .trip-dock a.stop:hover,
+    .trip-dock a.stop:focus-visible,
+    .trip-dock a.stop.is-active {
+      border-color: var(--pine);
+      outline: none;
+      transform: translateY(-1px);
+    }
+    .trip-dock a.stop.is-active {
+      background: #fff8ea;
+      box-shadow: 0 0 0 1px color-mix(in srgb, var(--clay) 35%, transparent);
+    }
+    .trip-dock .hop {
+      flex: 0 0 auto;
+      color: var(--muted);
+      font-size: 0.78rem;
+      white-space: nowrap;
+      padding: 0 0.1rem;
     }
 
-    .split { display: grid; gap: 1rem; }
-    @media (min-width: 860px) {
-      .split { grid-template-columns: 1.15fr 0.85fr; align-items: start; }
-    }
-    .map-card {
-      padding: 1rem 1rem 0.75rem;
-      overflow: hidden;
-    }
+    .map-card { padding: 1rem 1rem 0.75rem; overflow: hidden; }
     .map-card svg {
       display: block;
       width: 100%;
@@ -317,12 +281,7 @@
       color: var(--muted);
       line-height: 1.25;
     }
-    .map-pin {
-      cursor: pointer;
-    }
-    .map-pin circle:first-child {
-      transition: r 0.2s ease;
-    }
+    .map-pin { cursor: pointer; }
     .map-pin.is-active circle:first-child {
       stroke: var(--clay);
       stroke-width: 2.5;
@@ -334,11 +293,6 @@
       text-anchor: middle;
       dominant-baseline: central;
       pointer-events: none;
-    }
-    @media (max-width: 640px) {
-      .stop-rail {
-        grid-template-columns: 1fr 1fr;
-      }
     }
     .legend {
       display: flex;
@@ -357,19 +311,18 @@
       vertical-align: middle;
     }
     .swatch.go { background: var(--pine); }
-    .swatch.stop { background: var(--clay); }
+    .swatch.ghost {
+      background: repeating-linear-gradient(90deg, var(--gold) 0 4px, transparent 4px 7px);
+    }
     .swatch.pin {
       width: 0.55rem;
       height: 0.55rem;
       border-radius: 50%;
       background: var(--clay);
     }
-    .swatch.ghost {
-      background: repeating-linear-gradient(90deg, var(--gold) 0 4px, transparent 4px 7px);
-    }
     .route-draw {
-      stroke-dasharray: 920;
-      stroke-dashoffset: 920;
+      stroke-dasharray: 980;
+      stroke-dashoffset: 980;
       animation: route-draw 1.8s ease forwards 0.25s;
     }
     .route-alt {
@@ -377,10 +330,7 @@
       opacity: 0;
       animation: fade-in 0.7s ease forwards 1.5s;
     }
-    .pin-pop {
-      opacity: 0;
-      animation: fade-in 0.45s ease forwards;
-    }
+    .pin-pop { opacity: 0; animation: fade-in 0.45s ease forwards; }
     .map-label {
       font-family: var(--serif);
       fill: var(--ink);
@@ -389,17 +339,18 @@
       animation: fade-in 0.5s ease forwards 1.55s;
     }
     .map-label.muted { fill: var(--muted); font-size: 11px; font-family: var(--sans); }
-    @keyframes route-draw {
-      to { stroke-dashoffset: 0; }
-    }
-    @keyframes fade-in {
-      to { opacity: 1; }
-    }
+    @keyframes route-draw { to { stroke-dashoffset: 0; } }
+    @keyframes fade-in { to { opacity: 1; } }
     @media (prefers-reduced-motion: reduce) {
       .route-draw, .route-alt, .pin-pop, .map-label { animation: none; opacity: 1; stroke-dashoffset: 0; }
     }
+
+    .split { display: grid; gap: 1rem; }
+    @media (min-width: 860px) {
+      .split { grid-template-columns: 1.1fr 0.9fr; align-items: start; }
+    }
     .spine { list-style: none; margin: 0.2rem 0 0; padding: 0; }
-    .spine li { position: relative; padding: 0 0 1.35rem 1.7rem; }
+    .spine li { position: relative; padding: 0 0 1.2rem 1.7rem; }
     .spine li:last-child { padding-bottom: 0.2rem; }
     .spine li::before {
       content: "";
@@ -424,17 +375,53 @@
     }
     .spine .place {
       font-family: var(--serif);
-      font-size: clamp(1.25rem, 4.5vw, 1.55rem);
+      font-size: clamp(1.2rem, 4.2vw, 1.45rem);
       display: block;
       line-height: 1.15;
-      overflow-wrap: anywhere;
       color: inherit;
       text-decoration: none;
     }
     .spine a.place:hover,
     .spine a.place.is-active { color: var(--clay); }
-    .spine .hop { color: var(--muted); display: block; margin-top: 0.15rem; overflow-wrap: break-word; }
+    .spine .hop { color: var(--muted); display: block; margin-top: 0.15rem; }
     .ghost-note { margin: 1rem 0 0; color: var(--muted); }
+
+    .week-scroller, .table-scroller {
+      overflow-x: auto;
+      max-width: 100%;
+      width: 100%;
+      min-width: 0;
+      padding-bottom: 0.4rem;
+      -webkit-overflow-scrolling: touch;
+    }
+    .week {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(7.2rem, 1fr);
+      gap: 0.45rem;
+      min-width: 100%;
+    }
+    .week a {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+      text-decoration: none;
+      color: var(--ink);
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 0.7rem 0.75rem 0.75rem;
+      min-height: 6.2rem;
+      border-top: 4px solid var(--line);
+    }
+    .week a:hover { border-color: var(--gold); }
+    .week a small { color: var(--muted); font-size: 0.82rem; letter-spacing: 0.04em; text-transform: uppercase; }
+    .week a strong { font-family: var(--serif); font-size: 1.35rem; font-weight: 560; }
+    .week a em { font-style: normal; font-size: 0.92rem; line-height: 1.25; }
+    .week a.flight { border-top-color: var(--clay); }
+    .week a.park { border-top-color: var(--pine); }
+    .week a.buffer { border-top-color: #8d93a0; }
+    .week a.is-today { outline: 2px solid var(--clay); outline-offset: 2px; }
 
     table {
       width: 100%;
@@ -445,9 +432,7 @@
       overflow: hidden;
       box-shadow: var(--shadow);
     }
-    @media (min-width: 641px) {
-      #dny table { min-width: 36rem; }
-    }
+    @media (min-width: 641px) { #dny table { min-width: 34rem; } }
     thead th {
       text-align: left;
       font-size: 0.78rem;
@@ -471,20 +456,18 @@
     .day {
       padding: 1.2rem 0 1.3rem;
       border-top: 1px solid var(--line);
-      overflow-wrap: break-word;
     }
     .day.is-today {
       background: #fff8ea;
-      margin: 0;
       padding-left: 0.85rem;
       padding-right: 0.85rem;
       border-radius: 16px;
       box-shadow: inset 3px 0 0 var(--clay);
     }
     .meta { color: var(--muted); margin: 0 0 0.6rem; }
-    .day ul, .prose ul { padding-left: 1.15rem; }
-    .day li, .prose li, .card li { overflow-wrap: break-word; }
-    .day li + li, .prose li + li { margin-top: 0.35rem; }
+    .who { color: var(--muted); margin: 0 0 0.7rem; }
+    .day ul { padding-left: 1.15rem; }
+    .day li + li { margin-top: 0.35rem; }
     .tag {
       display: inline-block;
       font-size: 0.75rem;
@@ -498,15 +481,93 @@
 
     .cols { display: grid; gap: 1rem; }
     @media (min-width: 800px) { .cols { grid-template-columns: 1fr 1fr; } }
-    .plain {
-      background: transparent;
-      border: 0;
-      box-shadow: none;
-      padding: 0;
+
+    .actions { display: grid; gap: 0.7rem; margin: 0.8rem 0 0; padding: 0; list-style: none; }
+    .actions li {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 0.75rem;
+      align-items: start;
+    }
+    .actions b { font-family: var(--serif); color: var(--pine); font-size: 1.05rem; }
+
+    .tickets { display: grid; gap: 1rem; }
+    @media (min-width: 800px) { .tickets { grid-template-columns: 1fr 1fr; } }
+    .ticket {
+      background: var(--card);
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .ticket header {
+      background: var(--pine);
+      color: #f6f1e7;
+      padding: 0.9rem 1.1rem 0.8rem;
+    }
+    .ticket header p { margin: 0.2rem 0 0; color: #d9e4de; }
+    .ticket header strong { font-family: var(--serif); font-size: 1.35rem; font-weight: 560; }
+    .leg {
+      display: grid;
+      grid-template-columns: 4.6rem minmax(0, 1fr);
+      gap: 0.3rem 0.8rem;
+      padding: 0.85rem 1.1rem;
+      border-top: 1px dashed var(--line);
+    }
+    .leg > div { min-width: 0; }
+    .leg b { font-variant-numeric: tabular-nums; }
+    .leg span { color: var(--muted); display: block; font-size: 0.95rem; }
+    .note {
+      margin: 0;
+      padding: 0.75rem 1.1rem 1rem;
+      color: var(--muted);
+      font-size: 0.98rem;
     }
 
+    /* Optional / expandable blocks */
+    .extras { margin-top: 2.6rem; display: grid; gap: 0.8rem; }
+    .extras > h2 { margin: 0 0 0.2rem; }
+    .extras > p.lead {
+      margin: 0 0 0.4rem;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+    details.fold {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      padding: 0;
+      overflow: hidden;
+    }
+    details.fold > summary {
+      list-style: none;
+      cursor: pointer;
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      padding: 1rem 1.15rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+    }
+    details.fold > summary::-webkit-details-marker { display: none; }
+    details.fold > summary::after {
+      content: "+";
+      font-family: var(--sans);
+      color: var(--muted);
+      font-size: 1.35rem;
+      line-height: 1;
+    }
+    details.fold[open] > summary::after { content: "–"; }
+    details.fold .fold-body {
+      padding: 0 1.15rem 1.2rem;
+      border-top: 1px solid var(--line);
+    }
+    details.fold .fold-body > :first-child { margin-top: 1rem; }
+
     footer {
-      margin-top: 3rem;
+      margin-top: 2.5rem;
       padding: 1.5rem 0 2.5rem;
       color: var(--muted);
       font-size: 0.95rem;
@@ -525,70 +586,43 @@
       box-shadow: var(--shadow);
       z-index: 4;
     }
+
     @media (max-width: 640px) {
       body { font-size: 1.05rem; }
-      header.site { padding: 1rem 0 3.4rem; }
-      .hero { padding-top: 1.6rem; }
+      header.site { padding: 1rem 0 3.2rem; }
+      .hero { padding-top: 1.5rem; }
       .card { padding: 1.05rem 1rem 1.15rem; border-radius: 14px; }
-      .map-card { padding: 0.75rem 0.75rem 0.7rem; }
-      .map-card svg { border-radius: 10px; max-height: none; }
-      .map-label { font-size: 12px; }
-      .map-label.muted { font-size: 10px; }
-      .ticket header, .leg, .note { padding-left: 0.95rem; padding-right: 0.95rem; }
-      .leg { grid-template-columns: 3.8rem minmax(0, 1fr); gap: 0.25rem 0.55rem; }
-      .actions li { gap: 0.55rem; }
-      .spine li { padding-left: 1.45rem; }
-      .week a em { overflow-wrap: anywhere; }
-
-      /* Den po dni: stacked cards instead of sideways table scroll */
-      .table-scroller {
-        overflow: visible;
-        padding-bottom: 0;
-      }
+      .map-card { padding: 0.75rem; }
+      .stop-rail { grid-template-columns: 1fr 1fr; }
+      .table-scroller { overflow: visible; padding-bottom: 0; }
       #dny table {
         min-width: 0;
-        width: 100%;
         display: block;
         background: transparent;
         border-radius: 0;
         box-shadow: none;
-        overflow: visible;
       }
       #dny thead { display: none; }
-      #dny tbody { display: block; width: 100%; }
+      #dny tbody, #dny tr, #dny td { display: block; width: 100%; }
       #dny tr {
-        display: block;
-        width: 100%;
         background: var(--card);
         border: 1px solid var(--line);
         border-radius: 14px;
         box-shadow: var(--shadow);
         margin: 0 0 0.7rem;
-        padding: 0.85rem 0.95rem 0.95rem;
+        padding: 0.85rem 0.95rem;
       }
-      #dny tr:last-child { margin-bottom: 0; }
-      #dny td {
-        display: block;
-        width: 100%;
-        border: 0;
-        padding: 0;
-        white-space: normal;
-      }
+      #dny td { border: 0; padding: 0; white-space: normal; }
       #dny td:first-child {
         font-size: 1.2rem;
         font-weight: 560;
         margin-bottom: 0.35rem;
-        white-space: normal;
         box-shadow: none;
       }
       #dny td:nth-child(2) { margin-bottom: 0.4rem; }
-      #dny td:nth-child(3):not(:empty) {
-        color: var(--muted);
-        font-size: 0.98rem;
-      }
+      #dny td:nth-child(3):not(:empty) { color: var(--muted); }
       #dny td:nth-child(3):not(:empty)::before {
         content: "Noc · ";
-        font-family: var(--sans);
         font-size: 0.78rem;
         letter-spacing: 0.08em;
         text-transform: uppercase;
@@ -597,433 +631,294 @@
       #dny tr.park { box-shadow: var(--shadow), inset 3px 0 0 var(--pine); }
       #dny tr.flight { box-shadow: var(--shadow), inset 3px 0 0 var(--clay); }
       #dny tr.buffer { box-shadow: var(--shadow), inset 3px 0 0 #8d93a0; }
-
-      #today-jump {
-        right: 0.75rem;
-        bottom: 0.75rem;
-        max-width: calc(100vw - 1.5rem);
-      }
     }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
     @media print {
       header.site { background: white; color: black; padding-bottom: 1rem; }
-      .nav, #today-jump { display: none; }
-      .card, .ticket, table { box-shadow: none; }
-      body { background: white; }
+      .nav, #today-jump, .trip-dock { display: none; }
+      details.fold { break-inside: avoid; }
+      details.fold:not([open]) .fold-body { display: block; }
     }
   </style>
 </head>
 <body>
-  <a class="skip" href="#prehled">Přeskočit na přehled</a>
+  <a class="skip" href="#okruh">Přeskočit na okruh</a>
   <header class="site">
     <div class="wrap">
       <nav class="nav" aria-label="Na stránce">
-        <a href="#prehled">Přehled</a>
-        <a href="#tyden">Tento týden</a>
-        <a href="#lety">Lety</a>
-        <a href="#trasa">Trasa</a>
+        <a href="#okruh">Okruh</a>
         <a href="#dny">Dny</a>
         <a href="#spani">Spaní</a>
         <a href="#domluvit">Domluvit</a>
+        <a href="#doplnky">Doplňky</a>
       </nav>
       <div class="hero">
-        <p class="kicker">15.–26. listopadu 2026</p>
+        <p class="kicker">Road trip · 21.–25. listopadu 2026</p>
         <h1>California<br>Dreaming</h1>
-        <p class="lede">Matouš, Honza a Michael. Nejdřív San Francisco, potom okruh Yosemite → Údolí smrti → Tahoe, ve čtvrtek ráno odlet na páteční promoci v Innsbrucku.</p>
+        <p class="lede">Matouš, Honza a Michael. Společný výlet je okruh Údolí smrti → Tahoe → Yosemite. Yosemite bookuje Michael na úterý–středu.</p>
         <p class="route-pills">
-          <span>San Francisco</span><span class="dot">·</span>
-          <span>Yosemite</span><span class="dot">·</span>
-          <span>Údolí smrti</span><span class="dot">·</span>
-          <span>Tahoe</span><span class="dot">·</span>
+          <span>San Francisco</span><span class="dot">→</span>
+          <span>Údolí smrti</span><span class="dot">→</span>
+          <span>Tahoe</span><span class="dot">→</span>
+          <span>Yosemite</span><span class="dot">→</span>
           <span>San Francisco</span>
         </p>
       </div>
     </div>
   </header>
 
-  <main class="wrap" id="prehled">
-    <div class="sheet">
+  <main class="wrap">
+    <div class="sheet" id="prehled">
       <section class="card">
-        <p class="status"><strong>Návrh podle Michaela.</strong> ESTA mají Matouš i Honza. Michael má celoroční vstup do parků. Yosemite: 2 místa + Matouš v autě. Časy Honzova letu doplníme, jakmile je budeme znát.</p>
-        <p>Společné okno je sobota 21. 11. odpoledne až středa 25. 11. večer. Ve čtvrtek 26. 11. v 8:20 Matouš odlétá ze San Francisca, v pátek 27. 11. v 13:10 je v Innsbrucku.</p>
-        <p>Michaelův okruh: Yosemite → Údolí smrti → Tahoe a zpět. Sequoia z společného okna vypadává. Jízdy jsou delší než v předchozím návrhu, pěšky je hlavně neděle v údolí. Tioga Pass je zkratka, ne podmínka — když se zavře sněhem, jde se na Údolí smrti jižní cestou kolem hor.</p>
-      </section>
-
-      <section aria-label="Přehled dní">
-        <div class="week-scroller">
-          <div class="week">
-            <a class="flight" href="#den-15" data-date="2026-11-15"><small>ne 15.</small><strong>15</strong><em>Přílet 19:35</em></a>
-            <a class="city" href="#sf" data-date="2026-11-16"><small>po 16.</small><strong>16</strong><em>Měkký den</em></a>
-            <a class="city" href="#sf" data-date="2026-11-17"><small>út 17.</small><strong>17</strong><em>Kolo, most</em></a>
-            <a class="city" href="#sf" data-date="2026-11-18"><small>st 18.</small><strong>18</strong><em>Presidio</em></a>
-            <a class="city" href="#sf" data-date="2026-11-19"><small>čt 19.</small><strong>19</strong><em>Město</em></a>
-            <a class="city" href="#sf" data-date="2026-11-20"><small>pá 20.</small><strong>20</strong><em>Nákup, řetězy</em></a>
-            <a class="park" href="#den-21" data-date="2026-11-21"><small>so 21.</small><strong>21</strong><em>Honza, auto</em></a>
-            <a class="park" href="#den-22" data-date="2026-11-22"><small>ne 22.</small><strong>22</strong><em>Yosemite</em></a>
-            <a class="park" href="#den-23" data-date="2026-11-23"><small>po 23.</small><strong>23</strong><em>Údolí smrti</em></a>
-            <a class="park" href="#den-24" data-date="2026-11-24"><small>út 24.</small><strong>24</strong><em>Tahoe</em></a>
-            <a class="buffer" href="#den-25" data-date="2026-11-25"><small>st 25.</small><strong>25</strong><em>Návrat SF</em></a>
-            <a class="flight" href="#den-26" data-date="2026-11-26"><small>čt 26.</small><strong>26</strong><em>Odlet 8:20</em></a>
-          </div>
-        </div>
+        <p class="status"><strong>Road trip první.</strong> Michael rezervuje Yosemite na <strong>úterý 24. a středu 25. 11.</strong> — 2 místa, Matouš spí v autě. Lety, měkké dny ve městě a checklist jsou dole v doplňcích.</p>
+        <p>Matouš ve čtvrtek 26. 11. v 8:20 odlétá ze SFO. Ze středeční noci v Yosemite by nestihl let — ve středu odpoledne musí být zpátky ve městě. Když Michaelova rezervace kryje i středeční noc, můžou tam zůstat Honza s Michaelem.</p>
       </section>
     </div>
 
-    <section id="tyden">
-      <h2>Tento týden</h2>
-      <div class="card">
-        <p class="status" style="margin-top:0"><strong>Hotovo:</strong> ESTA pro Matouše i Honzu. Michael má celoroční park pass. Yosemite: Michael rezervuje 2 místa, Matouš klidně spí v autě.</p>
-        <ol class="actions">
-          <li><b>01</b><span><strong>Yosemite noc 22. 11. — 2 místa.</strong> Michael může zarezervovat jen dvě. Matouš napsal, že si v pohodě dá auto. Spát v autě jde jen na oficiálním kempu / povoleném místě, ne na parkovišti mimo rezervaci. Lodging jako záloha: Yosemite Valley Lodge nebo Curry Village (zavírá 29. 11.).</span></li>
-          <li><b>02</b><span><strong>Noc v Údolí smrti na pondělí 23. 11.</strong> Furnace Creek, Texas Springs nebo Stovepipe Wells na Recreation.gov, případně motel ve Furnace Creek. V listopadu je tam sezona, místa mizí.</span></li>
-          <li><b>03</b><span><strong>Noc u Tahoe na úterý 24. 11.</strong> Motel nebo cabin u South Lake Tahoe / Stateline. Stan u jezera v tuhle dobu dává smysl jen při suché noci a teplém spacáku; sníh a mráz jsou běžné.</span></li>
-          <li><b>04</b><span><strong>Auto sobota 21. 11. až čtvrtek 26. 11. ráno</strong>, ideálně výdej i vrácení na SFO. V podmínkách ověřit, že půjčovna dovolí sněhové řetězy — na 395 i na 50 k Tahoe je mohou chtít. K českému řidičáku půjčovna občas chce i mezinárodní.</span></li>
-          <li><b>05</b><span><strong>Michaelův park pass na bráně.</strong> Celoroční vstup (typicky America the Beautiful) kryje auto v Yosemite i Death Valley, když je pass u řidiče nebo spolujezdce. Stačí ho mít u sebe. Jen ověřit, jestli od roku 2026 u nerezidentů v autě nezbývá ještě osobní příplatek — když pass platí na celé auto, další kartu nekupujeme.</span></li>
-        </ol>
+    <div class="trip-dock" aria-label="Rychlý přehled zastávek">
+      <div class="trip-dock-track">
+        <a class="stop" href="#den-21" data-stop="sf"><span class="badge">1</span><span class="label">SF start</span><span class="when">so 21.</span></a>
+        <span class="hop">≈ 8 h</span>
+        <a class="stop" href="#den-22" data-stop="death-valley"><span class="badge">2</span><span class="label">Údolí smrti</span><span class="when">ne 22.</span></a>
+        <span class="hop">≈ 5–6 h</span>
+        <a class="stop" href="#den-23" data-stop="tahoe"><span class="badge">3</span><span class="label">Tahoe</span><span class="when">po 23.</span></a>
+        <span class="hop">≈ 4–5 h</span>
+        <a class="stop" href="#den-24" data-stop="yosemite"><span class="badge">4</span><span class="label">Yosemite</span><span class="when">út–st</span></a>
+        <span class="hop">≈ 4–4,5 h</span>
+        <a class="stop" href="#den-25" data-stop="sf-back"><span class="badge">↩</span><span class="label">SF odlet</span><span class="when">st 25.</span></a>
       </div>
-    </section>
+    </div>
 
-    <section id="lety">
-      <h2>Lety</h2>
-      <p class="narrow">Časy jsou místní, z potvrzení Lufthansy. V letence je Economy Light: palubní zavazadlo do 8 kg a osobní věc, kufr v ceně není. Boty ať jedou na nohou. Stan a spacák ať jsou u Michaela, nebo se půjčí ve městě v REI.</p>
-      <div class="tickets">
-        <article class="ticket">
-          <header>
-            <strong>Tam · neděle 15. 11.</strong>
-            <p>Innsbruck 10:00 → San Francisco 19:35 · 18 h 35 min · 1 přestup</p>
-          </header>
-          <div class="leg">
-            <b>10:00</b>
-            <div>Innsbruck, autobus LH3831<span>příjezd Mnichov 12:45, terminál 2</span></div>
-          </div>
-          <div class="leg">
-            <b>16:35</b>
-            <div>Mnichov, LH458, Airbus A380<span>příjezd San Francisco 19:35, International Terminal</span></div>
-          </div>
-          <p class="note">Michael vyzvedává na příletech mezinárodního terminálu. V San Franciscu je v tu chvíli večer, v Evropě půl páté ráno.</p>
-        </article>
-        <article class="ticket">
-          <header>
-            <strong>Zpět · čtvrtek 26. 11.</strong>
-            <p>San Francisco 8:20 → Innsbruck 13:10 v pátek · 19 h 50 min · 2 přestupy</p>
-          </header>
-          <div class="leg">
-            <b>8:20</b>
-            <div>San Francisco, terminál 3, LH7785 United<span>příjezd Chicago O'Hare 14:49, terminál 1</span></div>
-          </div>
-          <div class="leg">
-            <b>18:00</b>
-            <div>Chicago, LH9269 United<span>příjezd Mnichov v pátek 9:35, terminál 2</span></div>
-          </div>
-          <div class="leg">
-            <b>10:25</b>
-            <div>Mnichov, autobus LH3832<span>příjezd Innsbruck v pátek 13:10. V pátek je promoce.</span></div>
-          </div>
-          <p class="note">Odbavení v aplikaci ve středu, včetně údajů pro vstup do USA. Na terminálu 3 být v 6:00. Kufr se neodevzdává.</p>
-        </article>
-      </div>
-      <div class="card" style="margin-top: 1rem">
-        <h3>Honza</h3>
-        <p>Přilétá v sobotu a odlétá v neděli. Přesné časy v mailu nejsou. Sobota, která sedí na domluvu „v sobotu auto a z letiště rovnou na výlet“, je <strong>21. listopadu</strong>. Nedělní odlet v tomhle plánu počítám jako <strong>29. listopadu</strong>, až po Matoušově odletu. Neděle 22. 11. je den v Yosemite. Když má Honza letět už tu neděli, okruh se nevejde.</p>
-      </div>
-    </section>
-
-    <section id="trasa">
-      <h2>Trasa</h2>
+    <section id="okruh">
+      <h2>Okruh</h2>
       <article class="card map-card" aria-label="Mapa okruhu">
         <svg viewBox="0 0 420 500" role="img" aria-labelledby="map-title map-desc">
-          <title id="map-title">Okruh San Francisco, Yosemite, Údolí smrti a Tahoe</title>
-          <desc id="map-desc">Schematická mapa Kalifornie s trasou San Francisco → Yosemite → Údolí smrti → Tahoe → San Francisco. Přerušovaná čára značí zkratku přes Tioga Pass.</desc>
+          <title id="map-title">Okruh San Francisco, Údolí smrti, Tahoe a Yosemite</title>
+          <desc id="map-desc">Schematická mapa: San Francisco → Údolí smrti → Tahoe → Yosemite → San Francisco. Yosemite je až na úterý a středu.</desc>
 
-          <!-- Pacific wash -->
           <path d="M18 40 C 8 120, 12 220, 22 310 C 30 380, 18 430, 40 470 L 8 470 L 8 40 Z" fill="#d7e4ea" opacity="0.55"/>
-
-          <!-- California land -->
-          <path d="M78 42
-            C 120 38, 160 36, 198 48
-            L 228 78
-            C 248 98, 268 130, 286 168
-            C 302 202, 318 236, 336 278
-            C 352 312, 362 348, 348 382
-            C 332 422, 292 448, 248 458
-            C 210 466, 172 462, 148 448
-            C 120 430, 108 400, 102 368
-            C 94 322, 78 286, 62 248
-            C 48 214, 42 178, 46 142
-            C 50 108, 58 72, 78 42 Z"
-            fill="#f7f1e6" stroke="#d5c7b0" stroke-width="1.5"/>
-
-          <!-- Sierra ridge hint -->
-          <path d="M188 96 C 206 140, 222 188, 238 240 C 250 278, 262 318, 248 352"
-            fill="none" stroke="#cbb892" stroke-width="10" stroke-linecap="round" opacity="0.35"/>
-
-          <!-- Lake Tahoe blob -->
+          <path d="M78 42 C 120 38, 160 36, 198 48 L 228 78 C 248 98, 268 130, 286 168 C 302 202, 318 236, 336 278 C 352 312, 362 348, 348 382 C 332 422, 292 448, 248 458 C 210 466, 172 462, 148 448 C 120 430, 108 400, 102 368 C 94 322, 78 286, 62 248 C 48 214, 42 178, 46 142 C 50 108, 58 72, 78 42 Z" fill="#f7f1e6" stroke="#d5c7b0" stroke-width="1.5"/>
+          <path d="M188 96 C 206 140, 222 188, 238 240 C 250 278, 262 318, 248 352" fill="none" stroke="#cbb892" stroke-width="10" stroke-linecap="round" opacity="0.35"/>
           <ellipse cx="198" cy="148" rx="10" ry="7" fill="#9ec0cb" stroke="#6f95a1" stroke-width="1"/>
+          <path d="M268 286 C 286 292, 298 308, 292 322 C 284 336, 262 334, 252 320 C 244 308, 252 294, 268 286 Z" fill="#e8d3b0" stroke="#c9a978" stroke-width="1" opacity="0.8"/>
 
-          <!-- Death Valley basin hint -->
-          <path d="M268 286 C 286 292, 298 308, 292 322 C 284 336, 262 334, 252 320 C 244 308, 252 294, 268 286 Z"
-            fill="#e8d3b0" stroke="#c9a978" stroke-width="1" opacity="0.8"/>
+          <!-- Tioga option Tahoe ↔ Yosemite -->
+          <path class="route-alt" d="M198 148 C 190 170, 182 196, 176 214" fill="none" stroke="#a6843d" stroke-width="2.2" stroke-linecap="round"/>
 
-          <!-- Alternate Tioga shortcut: Yosemite east then south to DV -->
-          <path class="route-alt" d="M176 214 C 198 204, 222 214, 236 238 C 248 258, 258 278, 274 300"
-            fill="none" stroke="#a6843d" stroke-width="2.2" stroke-linecap="round"/>
-
-          <!-- Main loop: SF → Yosemite → south around → DV → Tahoe → SF -->
+          <!-- SF → DV → Tahoe → Yosemite → SF -->
           <path class="route-draw" d="M96 198
-            C 118 204, 146 210, 176 214
-            C 168 236, 152 268, 148 300
-            C 146 330, 168 348, 204 352
-            C 236 356, 262 340, 274 300
-            C 282 274, 270 246, 248 214
-            C 230 188, 214 164, 198 148
-            C 168 150, 132 164, 108 180
-            C 100 186, 96 192, 96 198"
+            C 130 230, 190 270, 274 300
+            C 270 250, 235 180, 198 148
+            C 190 168, 182 196, 176 214
+            C 145 208, 115 200, 96 198"
             fill="none" stroke="#1e3f34" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
 
-          <!-- Numbered clickable pins -->
-          <a class="map-pin pin-pop" data-stop="sf" href="#sf" style="animation-delay: 0.55s">
-            <circle cx="96" cy="198" r="11" fill="#8c3b28"/>
-            <text x="96" y="198">1</text>
+          <a class="map-pin pin-pop" data-stop="sf" href="#den-21" style="animation-delay:0.55s">
+            <circle cx="96" cy="198" r="11" fill="#8c3b28"/><text x="96" y="198">1</text>
           </a>
-          <a class="map-pin pin-pop" data-stop="yosemite" href="#den-22" style="animation-delay: 0.85s">
-            <circle cx="176" cy="214" r="11" fill="#1e3f34"/>
-            <text x="176" y="214">2</text>
+          <a class="map-pin pin-pop" data-stop="death-valley" href="#den-22" style="animation-delay:0.85s">
+            <circle cx="274" cy="300" r="11" fill="#1e3f34"/><text x="274" y="300">2</text>
           </a>
-          <a class="map-pin pin-pop" data-stop="death-valley" href="#den-23" style="animation-delay: 1.15s">
-            <circle cx="274" cy="300" r="11" fill="#1e3f34"/>
-            <text x="274" y="300">3</text>
+          <a class="map-pin pin-pop" data-stop="tahoe" href="#den-23" style="animation-delay:1.1s">
+            <circle cx="198" cy="148" r="11" fill="#1e3f34"/><text x="198" y="148">3</text>
           </a>
-          <a class="map-pin pin-pop" data-stop="tahoe" href="#den-24" style="animation-delay: 1.4s">
-            <circle cx="198" cy="148" r="11" fill="#1e3f34"/>
-            <text x="198" y="148">4</text>
+          <a class="map-pin pin-pop" data-stop="yosemite" href="#den-24" style="animation-delay:1.35s">
+            <circle cx="176" cy="214" r="11" fill="#1e3f34"/><text x="176" y="214">4</text>
           </a>
 
-          <!-- Labels -->
           <text class="map-label" x="48" y="176">San Francisco</text>
-          <text class="map-label" x="186" y="208">Yosemite</text>
           <text class="map-label" x="286" y="296">Údolí smrti</text>
           <text class="map-label" x="214" y="140">Tahoe</text>
-          <text class="map-label muted" x="214" y="228">Tioga</text>
-          <text class="map-label muted" x="118" y="328">jižní objížďka</text>
+          <text class="map-label" x="186" y="208">Yosemite</text>
+          <text class="map-label muted" x="206" y="188">Tioga</text>
           <text class="map-label muted" x="300" y="68">Nevada</text>
           <text class="map-label muted" x="28" y="460">Pacifik</text>
         </svg>
 
         <ol class="stop-rail" aria-label="Zastávky okruhu">
           <li>
-            <a href="#sf" data-stop="sf">
+            <a href="#den-21" data-stop="sf">
               <span class="num">1</span>
               <span class="name">San Francisco</span>
-              <p class="meta">15.–21. · start</p>
+              <p class="meta">so 21. · start</p>
             </a>
           </li>
           <li>
-            <a href="#den-22" data-stop="yosemite">
+            <a href="#den-22" data-stop="death-valley">
               <span class="num">2</span>
-              <span class="name">Yosemite</span>
-              <p class="meta">22. · 2 místa + auto</p>
-            </a>
-          </li>
-          <li>
-            <a href="#den-23" data-stop="death-valley">
-              <span class="num">3</span>
               <span class="name">Údolí smrti</span>
-              <p class="meta">23. · přejezd</p>
+              <p class="meta">ne 22. · noc dole</p>
             </a>
           </li>
           <li>
-            <a href="#den-24" data-stop="tahoe">
-              <span class="num">4</span>
+            <a href="#den-23" data-stop="tahoe">
+              <span class="num">3</span>
               <span class="name">Tahoe</span>
-              <p class="meta">24. · jezero</p>
+              <p class="meta">po 23. · jezero</p>
+            </a>
+          </li>
+          <li>
+            <a href="#den-24" data-stop="yosemite">
+              <span class="num">4</span>
+              <span class="name">Yosemite</span>
+              <p class="meta">út–st · 2 místa + auto</p>
             </a>
           </li>
         </ol>
 
         <div class="legend" aria-hidden="true">
-          <span><i class="swatch go"></i>hlavní okruh</span>
-          <span><i class="swatch ghost"></i>Tioga, když je otevřená</span>
-          <span><i class="swatch pin"></i>klikni na bod → den</span>
+          <span><i class="swatch go"></i>okruh</span>
+          <span><i class="swatch ghost"></i>Tioga Tahoe ↔ Yosemite</span>
+          <span><i class="swatch pin"></i>klik → den</span>
         </div>
-        <p class="map-caption">Schematická mapa, ne navigace. Body i karty pod mapou skáčou na odpovídající den. Plná čára drží i bez Tiogy; zlatá přerušovaná je zkratka přes průsmyk.</p>
+        <p class="map-caption">Pořadí sedí na Michaelovu rezervaci v Yosemite (út–st). Sticky lišta nahoře ukazuje jízdy mezi body.</p>
       </article>
 
       <div class="split" style="margin-top: 1rem">
         <div class="card">
           <ol class="spine">
             <li>
-              <a class="place" href="#sf" data-stop="sf">1 · San Francisco</a>
-              <span class="hop">4–4,5 h · silnice 140 přes Merced · asi 310 km</span>
+              <a class="place" href="#den-21" data-stop="sf">1 · San Francisco</a>
+              <span class="hop">so 21. · auto + Honza, odjezd na východ ≈ 8 h do Death Valley</span>
             </li>
             <li>
-              <a class="place" href="#den-22" data-stop="yosemite">2 · Yosemite Valley</a>
-              <span class="hop">neděle v údolí, pondělí ráno odjezd na východ</span>
+              <a class="place" href="#den-22" data-stop="death-valley">2 · Údolí smrti</a>
+              <span class="hop">ne 22. noc · út ráno krátký okruh, pak 395 na sever</span>
             </li>
             <li>
-              <a class="place" href="#den-23" data-stop="death-valley">3 · Údolí smrti</a>
-              <span class="hop">pondělí přejezd, noc dole, úterý ráno krátký okruh</span>
+              <a class="place" href="#den-23" data-stop="tahoe">3 · Tahoe</a>
+              <span class="hop">po 23. noc · út ráno k Yosemite ≈ 4–5 h</span>
             </li>
             <li>
-              <a class="place" href="#den-24" data-stop="tahoe">4 · Tahoe</a>
-              <span class="hop">úterý odpoledne po 395 na sever, noc u jezera</span>
+              <a class="place" href="#den-24" data-stop="yosemite">4 · Yosemite</a>
+              <span class="hop">út 24. noc (Michael: 2 místa) · st 25. dopoledne park</span>
             </li>
             <li>
-              <a class="place" href="#den-25" data-stop="sf">zpět · San Francisco</a>
-              <span class="hop">středa po 50 zpět, čtvrtek odlet v 8:20</span>
+              <a class="place" href="#den-25" data-stop="sf-back">zpět · San Francisco</a>
+              <span class="hop">st 25. odpoledne ≈ 4–4,5 h · čt 26. odlet 8:20</span>
             </li>
           </ol>
-          <p class="ghost-note">Sequoia a Silicon Valley z tohohle okruhu vypadávají.</p>
+          <p class="ghost-note">Původní směr Yosemite → Death Valley je otočený, protože kemp je až na konci týdne.</p>
         </div>
         <div class="prose">
           <div class="card">
-            <h3>Proč zrovna takhle</h3>
-            <p>Michael se bojí, že přímá cesta Yosemite → Tahoe přes Tiogu bude sněhem zavřená. Proto jde okruh nejdřív na jihovýchod do Údolí smrti a teprve pak na sever k Tahoe po 395. Tioga je zkratka z Yosemite do Death Valley, ne most k jezeru.</p>
-            <p>Když je Tioga otevřená: Yosemite → Tioga → 395 jih → Death Valley, asi 5 až 6 hodin. Když je zavřená: ven z údolí na západ nebo jih a kolem hor přes Bakersfield a silnice 58/14, asi 8,5 až 9 hodin. Okruh platí v obou případech.</p>
-            <p>Lana na Half Dome jsou od poloviny října dole. Na vrchol se v listopadu nejde. Half Dome je z údolí vidět; dlouhý hike na Nevada Fall v tomhle okně ustupuje přejezdům.</p>
+            <h3>Proč tohle pořadí</h3>
+            <p>Michael bookuje Yosemite na úterý a středu. Proto je údolí až ke konci okruhu, ne na začátku.</p>
+            <p>Geografie sedí: SF → Údolí smrti → po 395 nahoru k Tahoe → do Yosemite → zpět do Bay Area. Tioga pomůže mezi Tahoe a Yosemite, když je otevřená; jinak se objíždí západní stranou.</p>
+            <p>Matoušův čtvrteční let znamená středeční návrat do SF. Středeční noc v kempu je jen pro Honzu a Michaela, pokud ji rezervace opravdu kryje.</p>
           </div>
         </div>
-      </div>
-
-      <div class="cols" style="margin-top: 1rem">
-        <article class="card">
-          <h3>Tioga Pass</h3>
-          <p>6. 11. 2026 byla otevřená. Mezi 11. a 12. 11. má přijít další sníh a před Díkůvzdáním se skoro každý rok zavře. Stav se kontroluje večer před pondělním odjezdem na <a href="https://www.nps.gov/yose/planyourvisit/conditions.htm">nps.gov/yose</a> a na Caltrans QuickMap. Vjezd do údolí po 140 zavřený nebývá.</p>
-        </article>
-        <article class="card">
-          <h3>Sequoia</h3>
-          <p>Zůstává mimo společný plán. Do Údolí smrti i k Tahoe se vejde jen těsně; sekvoje by sebraly den, který teď patří přejezdu nebo jezeru. Když Honza zůstane do 29. 11., dá se k nim zajet až po Matoušově odletu — to už je jiný výlet.</p>
-        </article>
       </div>
     </section>
 
     <section id="dny">
-      <h2>Den po dni</h2>
-      <div class="table-scroller">
+      <h2>Den po dni · road trip</h2>
+      <div class="week-scroller" aria-label="Road trip dny">
+        <div class="week">
+          <a class="park" href="#den-21" data-date="2026-11-21"><small>so 21.</small><strong>21</strong><em>Honza, start</em></a>
+          <a class="park" href="#den-22" data-date="2026-11-22"><small>ne 22.</small><strong>22</strong><em>Údolí smrti</em></a>
+          <a class="park" href="#den-23" data-date="2026-11-23"><small>po 23.</small><strong>23</strong><em>Tahoe</em></a>
+          <a class="park" href="#den-24" data-date="2026-11-24"><small>út 24.</small><strong>24</strong><em>Yosemite</em></a>
+          <a class="buffer" href="#den-25" data-date="2026-11-25"><small>st 25.</small><strong>25</strong><em>Yosemite → SF</em></a>
+          <a class="flight" href="#den-26" data-date="2026-11-26"><small>čt 26.</small><strong>26</strong><em>Odlet 8:20</em></a>
+        </div>
+      </div>
+
+      <div class="table-scroller" style="margin-top: 1rem">
         <table>
           <thead>
             <tr><th>Den</th><th>Program</th><th>Noc</th></tr>
           </thead>
           <tbody>
-            <tr class="flight"><td>ne 15.</td><td>Matouš přistává v 19:35, International Terminal. Michael na příletech.</td><td>San Francisco</td></tr>
-            <tr><td>po 16. – pá 20.</td><td>Matouš a Michael. Město, dvě kola, v pátek nákup a řetězy.</td><td>San Francisco</td></tr>
-            <tr class="park"><td>so 21.</td><td>Honza, auto, jídlo na cestu. Když je venku z letiště do 13:00, noc v Maripose.</td><td>SF, nebo Mariposa</td></tr>
-            <tr class="park"><td>ne 22.</td><td>Přejezd po 140, odpoledne dno údolí. Tunnel View, louky, Yosemite Fall.</td><td>Yosemite Valley</td></tr>
-            <tr class="park"><td>po 23.</td><td>Ráno z údolí na Údolí smrti. Tioga, nebo jižní objížďka. Nejdelší den.</td><td>Furnace Creek / Stovepipe</td></tr>
-            <tr class="park"><td>út 24.</td><td>Ráno Badwater a Zabriskie. Odpoledne po 395 na Tahoe.</td><td>South Lake Tahoe</td></tr>
-            <tr class="buffer"><td>st 25.</td><td>Ráno jezero, brzy odjezd po 50 do Bay Area. Den před Díkůvzdáním.</td><td>u Michaela, nebo u SFO</td></tr>
-            <tr class="flight"><td>čt 26.</td><td>Odvoz na terminál 3 k 6:00. Odlet 8:20.</td><td>letadlo</td></tr>
-            <tr><td>pá 27.</td><td>Innsbruck 13:10, promoce.</td><td>Innsbruck</td></tr>
-            <tr><td>ne 29.</td><td>Honzův odlet, čas neznáme. Předpoklad, viz lety.</td><td></td></tr>
+            <tr class="park"><td>so 21.</td><td>Honza, auto, odjezd směrem na Údolí smrti. Když přistane pozdě, noc ještě v SF a neděle je celý přejezd.</td><td>cestou / SF</td></tr>
+            <tr class="park"><td>ne 22.</td><td>Údolí smrti. Badwater, Zabriskie, Artist's Drive.</td><td>Furnace Creek / Stovepipe</td></tr>
+            <tr class="park"><td>po 23.</td><td>Ráno dole, odpoledne 395 na Tahoe.</td><td>South Lake Tahoe</td></tr>
+            <tr class="park"><td>út 24.</td><td>Ráno jezero, odpoledne do Yosemite. Michaelova rezervace začíná.</td><td>Yosemite · 2 místa + auto</td></tr>
+            <tr class="buffer"><td>st 25.</td><td>Dopoledne údolí. Matouš odpoledne do SF. Honza/Michael podle rezervace.</td><td>SF / případně Yosemite</td></tr>
+            <tr class="flight"><td>čt 26.</td><td>Terminál 3 v 6:00, odlet 8:20.</td><td>letadlo</td></tr>
           </tbody>
         </table>
       </div>
 
-      <div id="sf" class="day" data-date="2026-11-16">
-        <p class="tag">Než přijede Honza</p>
-        <h3>Neděle 15. až pátek 20. · San Francisco</h3>
-        <p class="who">Matouš a Michael. Program je volný, ať se domluví na místě.</p>
-        <ul>
-          <li id="den-15" data-date="2026-11-15"><strong>Neděle 15.</strong> Přílet, jídlo, spánek. Vydržet aspoň do devíti, ať se noc neprotočí.</li>
-          <li data-date="2026-11-16"><strong>Pondělí 16.</strong> Měkký den. Světlo, káva, krátká procházka. Golden Gate z Crissy Field, jen když na to budou síly.</li>
-          <li data-date="2026-11-17"><strong>Úterý 17.</strong> Kolo přes Golden Gate do Sausalita a trajekt zpět. Plochá cesta, kolem 25 km.</li>
-          <li data-date="2026-11-18"><strong>Středa 18.</strong> Kolo nebo pěšky. Presidio, Crissy Field, Lands End, západ slunce nad mostem.</li>
-          <li data-date="2026-11-19"><strong>Čtvrtek 19.</strong> Město bez seznamu. Ferry Building, Mission, Twin Peaks.</li>
-          <li data-date="2026-11-20"><strong>Pátek 20.</strong> Nákup jídla na neděli až úterý, řetězy, sbalit večer. Předpověď pro Yosemite Valley, Death Valley a Tahoe. Podle ní stan, nebo střecha. A stav <a href="https://www.nps.gov/yose/planyourvisit/conditions.htm">silnic v Yosemite</a>, hlavně Tiogy, plus Caltrans QuickMap na 395 a 50.</li>
-        </ul>
-      </div>
-
       <article class="day" id="den-21" data-date="2026-11-21">
-        <p class="tag">Road trip</p>
-        <h3>Sobota 21. · Honza a auto</h3>
-        <p class="meta">Slunce v horách zapadá kolem půl páté. Do údolí se dnes za světla nestihne, pokud Honza není venku z letiště dopoledne.</p>
+        <p class="tag">Start</p>
+        <h3>Sobota 21. · Honza a odjezd</h3>
+        <p class="meta">Cíl není Yosemite — to je až úterý. Směr je jihovýchod k Death Valley, z SF zhruba 8 hodin.</p>
         <ul>
-          <li>Vyzvednout auto na SFO, naložit Honzu, nákup doplnit cestou nebo ještě ve městě.</li>
-          <li>Když je venku z terminálu do 13:00: odjezd po 140 a noc v Maripose. Ráno je do údolí hodina a čtvrt, a neděle začne v parku, ne v autě.</li>
-          <li>Když přistane později: noc ve San Franciscu. V neděli budík v 5:45, odjezd v 6:30.</li>
+          <li>Auto na SFO, Honza, nákup na cestu, řetězy v kufru.</li>
+          <li>Když je Honza venku do oběda: odjezd hned, noc klidně někde cestou (Mojave / Ridgecrest) nebo rovnou dole, když to stihnete za světla.</li>
+          <li>Když přistane pozdě: noc v SF, v neděli budík brzo a celý den je přejezd.</li>
         </ul>
       </article>
 
       <article class="day" id="den-22" data-date="2026-11-22">
-        <p class="tag">Yosemite</p>
-        <h3>Neděle 22. · údolí</h3>
-        <p class="meta">Jízda 4 až 4,5 hodiny, kolem 310 km, po silnici 140 přes Merced a Mariposu. Nižší vjezd, Arch Rock. Vstup na hodinu se v roce 2026 nerezervuje; na bráně ukázat Michaelův celoroční pass.</p>
+        <p class="tag">Údolí smrti</p>
+        <h3>Neděle 22. · solná pláň</h3>
+        <p class="meta">V listopadu je dole příjemně. Na bráně Michaelův park pass.</p>
         <ul>
-          <li>Ze San Francisca odjezd v 6:30, v údolí kolem 11:00. Z Mariposy odjezd v 8:00 a v údolí dopoledne.</li>
-          <li>Tunnel View, Valley View, Lower Yosemite Fall a Cook's Meadow. Half Dome je z louky vidět celý, včetně stěny, na kterou se nejde.</li>
-          <li>Když zbývá světlo a síly: krátký výšlap k Vernal Fall, asi 5 km. Celý okruh na Nevada Fall se v tomhle plánu nevejde — pondělí patří autu.</li>
-          <li>Spaní: Michael má 2 místa, Matouš spí v autě na kempu. Odbavit dřív, najíst se, spát brzo.</li>
-          <li>Vodopády v listopadu tečou málo; jde se kvůli žule, El Capitanu a Half Dome.</li>
+          <li>Badwater Basin, Zabriskie Point, krátký Artist's Drive.</li>
+          <li>Noc Furnace Creek, Texas Springs nebo Stovepipe Wells — rezervovat dřív, listopad je sezona.</li>
+          <li>Benzin brát včas; mezi městy je řídký.</li>
         </ul>
       </article>
 
       <article class="day" id="den-23" data-date="2026-11-23">
-        <p class="tag hard">Nejdelší den</p>
-        <h3>Pondělí 23. · Yosemite → Údolí smrti</h3>
-        <p class="meta">Čistě přejezd. S Tiogou 5 až 6 hodin a asi 435 km. Bez Tiogy 8,5 až 9 hodin a kolem 720 km. Odjezd brzo ráno, ať se dole nestmívá na silnici.</p>
+        <p class="tag">Přejezd</p>
+        <h3>Pondělí 23. · Údolí smrti → Tahoe</h3>
+        <p class="meta">Po 395 na sever, zhruba 5 až 6 hodin. Ven z parku do 11:00.</p>
         <ul>
-          <li>Večer předtím zkontrolovat Tiogu. Když je otevřená: Crane Flat → Tioga Road → Lee Vining → 395 jih → 190 do Death Valley.</li>
-          <li>Když je zavřená: ven po 140 nebo 41, pak kolem Sierry přes Bakersfield a silnice 58/14 na 395 a 190. Delší, ale okruh drží.</li>
-          <li>Cíl je Furnace Creek nebo Stovepipe Wells před tmou. V listopadu je v údolí přes den příjemně, v noci chladno.</li>
-          <li>Po cestě jen krátké zastávky na benzin a jídlo. Hike v Yosemite se dnes nechává být — tohle je den, který Michaelův okruh stojí.</li>
+          <li>Lone Pine, Bishop, kolem Mammoth.</li>
+          <li>K jezeru po 395 a 50 / 89 podle sněhu a řetězů.</li>
+          <li>Noc South Lake Tahoe / Stateline — spíš motel než stan.</li>
         </ul>
       </article>
 
       <article class="day" id="den-24" data-date="2026-11-24">
-        <p class="tag">Údolí smrti → Tahoe</p>
-        <h3>Úterý 24. · solná pláň, pak jezero</h3>
-        <p class="meta">Ráno dole, odpoledne po 395 na sever. Z Furnace Creek k South Lake Tahoe je zhruba 5 až 6 hodin, podle zastávek a sněhu na průsmycích k jezeru.</p>
+        <p class="tag hard">Yosemite · rezervace</p>
+        <h3>Úterý 24. · Tahoe → Yosemite</h3>
+        <p class="meta">Michael bookuje místa na úterý–středu. Dnes první noc v údolí: 2 místa, Matouš v autě.</p>
         <ul>
-          <li>Ráno Badwater Basin, Zabriskie Point, případně krátký Artist's Drive. Ven z parku do 11:00.</li>
-          <li>395 na sever: Lone Pine, Bishop, kolem Mammoth. Benzin brát včas, mezi městy je řídký.</li>
-          <li>K Tahoe po 395 a 50, nebo 89, podle sněhu a řetězů. Emerald Bay jen když je západní břeh otevřený.</li>
-          <li>Noc v South Lake Tahoe / Stateline. Stan jen při suché předpovědi; jinak motel. Ve středu se jede domů brzo.</li>
+          <li>Ráno krátce u jezera, pak k Yosemite. S Tiogou kratší; bez ní západní objížďka.</li>
+          <li>Odpoledne Tunnel View, louky, Lower Yosemite Fall. Half Dome z údolí.</li>
+          <li>Odbavit kemp dřív. V autě přes noc žádné jídlo — medvědi.</li>
         </ul>
       </article>
 
       <article class="day" id="den-25" data-date="2026-11-25">
-        <p class="tag">Návrat</p>
-        <h3>Středa 25. · Tahoe → San Francisco</h3>
-        <p class="meta">Den před Díkůvzdáním. Na dálnicích do Bay Area je to jeden z nejhorších dnů v roce. Odjezd z jezera ráno, ideálně do osmi.</p>
+        <p class="tag hard">Rozdělení</p>
+        <h3>Středa 25. · Yosemite, pak SF</h3>
+        <p class="meta">Den před Díkůvzdáním. Matouš potřebuje být večer u SFO / u Michaela ve městě.</p>
         <ul>
-          <li>Krátké ráno u vody, když je klid. Pak silnice 50 přes Echo Summit a Sacramento Valley do města, 3,5 až 4 hodiny bez kolony, s Díkůvzdáním klidně víc.</li>
-          <li>Ve městě odbavení do aplikace, pas a ESTA do kapsy na zítra. Budík ve čtvrtek ve 4:30, odjezd v 5:00, terminál 3 v 6:00.</li>
-          <li>Když auto zůstává Honzovi a Michaelovi, Michael veze Matouše na odlet a jede dál. Když půjčení končí s Matoušem, auto se vrací ve středu večer na SFO a spí se u letiště.</li>
+          <li>Dopoledne Vernal Fall nebo jen dno údolí — podle sil a času.</li>
+          <li>Matouš odjezd odpoledne, ≈ 4–4,5 h do Bay Area. Budík ve čtvrtek 4:30.</li>
+          <li>Když rezervace kryje i středeční noc, Honza a Michael můžou zůstat; Matouš ne.</li>
         </ul>
       </article>
 
       <article class="day" id="den-26" data-date="2026-11-26">
         <p class="tag hard">Odlet</p>
         <h3>Čtvrtek 26. · San Francisco 8:20</h3>
-        <p>Terminál 3, let United pro Lufthansu do Chicaga, večer dál do Mnichova, v pátek autobus do Innsbrucku. Na místě v 13:10. Díkůvzdání je tenhle den v Americe, promoce je v pátek v Innsbrucku.</p>
-        <p>Pátek a sobota, jestli Honza letí až v neděli 29. 11., patří jemu a Michaelovi. Sequoia nebo další kolo kolem jezera už je mimo společný plán s Matoušem.</p>
+        <p>Terminál 3 v 6:00. United / Lufthansa přes Chicago a Mnichov, Innsbruck v pátek 13:10 na promoci.</p>
       </article>
     </section>
 
     <section id="spani">
-      <h2>Spaní, zima, vstup</h2>
+      <h2>Spaní na road tripu</h2>
       <div class="cols">
         <article class="card">
-          <h3>Kde se spí</h3>
+          <h3>Noci</h3>
           <ul>
-            <li><strong>15.–20. a ideálně i 21.</strong> U Michaela ve San Franciscu.</li>
-            <li><strong>21., jen při brzkém příletu.</strong> Mariposa, před parkem.</li>
-            <li><strong>22.</strong> Yosemite Valley. Jedna noc. Michael rezervuje 2 místa; Matouš spí v autě, jak domluvili. Lower Pines a North Pines jsou zavřené. V údolí bývá v noci kolem nuly, občas mráz.</li>
-            <li><strong>23.</strong> Údolí smrti: Furnace Creek, Texas Springs nebo Stovepipe Wells. Níže než Yosemite, noci chladné, ale bez sněhu. Motel ve Furnace Creek jako záloha.</li>
-            <li><strong>24.</strong> South Lake Tahoe / Stateline. Spíš střecha než stan; u jezera bývá mráz a občas sníh.</li>
-            <li><strong>25.</strong> U Michaela, nebo u SFO, podle toho, komu zůstane auto.</li>
+            <li><strong>21.</strong> Cestou k Death Valley, nebo ještě SF při pozdním Honzovi.</li>
+            <li><strong>22.</strong> Údolí smrti — Furnace Creek / Stovepipe.</li>
+            <li><strong>23.</strong> South Lake Tahoe — motel.</li>
+            <li><strong>24.</strong> Yosemite — Michael 2 místa, Matouš auto.</li>
+            <li><strong>25.</strong> Matouš ve městě / u SFO. Honza + Michael podle toho, jestli kemp kryje i středu.</li>
           </ul>
         </article>
         <article class="card">
-          <h3>Stan, nebo střecha</h3>
-          <p>Stan dává smysl v Yosemite a případně v Death Valley, když je v pátek suchá noc a spacák drží pod nulou, s podložkou pod tělem. Yosemite Valley Lodge, Curry Village nebo pokoj v El Portalu bereme, když má pršet, nebo když spacák končí nad nulou. U Tahoe defaultně motel.</p>
-          <p>V kempu patří jídlo, odpadky a voňavá kosmetika do medvědího boxu. V autě přes noc nic k jídlu. Medvědi jsou v listopadu v Yosemite pořád aktivní.</p>
+          <h3>Na bráně</h3>
+          <p>Michaelův celoroční pass. ESTA mají Matouš i Honza hotové. Řetězy na 395 a 50.</p>
         </article>
-      </div>
-      <div class="card" style="margin-top: 1rem">
-        <h3>S sebou do hor</h3>
-        <p>Pohorky, vrstvy, čepice, rukavice, pláštěnka, čelovka, voda do auta i na krátké zastávky, svačina z pátku, řetězy, Michaelův park pass, pas, řidičák, nabitá powerbanka. V Yosemite i v Death Valley bývá signál špatný. Mapu offline i tuhle stránku otevřít ještě ve městě.</p>
       </div>
     </section>
 
@@ -1031,26 +926,95 @@
       <h2>Ještě domluvit</h2>
       <div class="card">
         <ul>
-          <li>Přesný čas Honzova příletu v sobotu 21. 11. a který nedělní odlet platí.</li>
-          <li>Jestli auto po čtvrtečním ránu zůstane Honzovi a Michaelovi.</li>
-          <li>Potvrdit Michaelovu rezervaci 2 míst v Yosemite na 22. 11. a že Matouš spí v autě legálně na tom samém kempu.</li>
-          <li>Noc 23. 11. v Death Valley: kemp, nebo motel.</li>
-          <li>Noc 24. 11. u Tahoe: rezervovat motel dřív, Díkůvzdání plní okolí.</li>
-          <li>V neděli večer finální volba: Tioga otevřená, nebo jižní objížďka do Death Valley.</li>
-          <li>U Michaelova park passu: jestli na bráně kryje celé auto i s nerezidenty, nebo zbývá osobní příplatek.</li>
+          <li>Přesné noci Michaelovy rezervace v Yosemite: jen út, nebo út+st?</li>
+          <li>Potvrzení 2 míst a že Matouš spí v autě na tom samém kempu.</li>
+          <li>Noc 22. v Death Valley a motel 23. u Tahoe.</li>
+          <li>Honzův přílet v sobotu a jestli po Matoušově odletu auto zůstává.</li>
         </ul>
       </div>
+    </section>
+
+    <section class="extras" id="doplnky">
+      <h2>Doplňky</h2>
+      <p class="lead">Volitelné — lety, město před odjezdem, checklist. Road trip výše je hlavní.</p>
+
+      <details class="fold">
+        <summary>Lety</summary>
+        <div class="fold-body">
+          <p class="narrow">Časy místní, z potvrzení Lufthansy. Economy Light: palubní do 8 kg, kufr není. Stan a spacák u Michaela, nebo REI.</p>
+          <div class="tickets" style="margin-top: 1rem">
+            <article class="ticket">
+              <header>
+                <strong>Tam · neděle 15. 11.</strong>
+                <p>Innsbruck 10:00 → San Francisco 19:35 · 18 h 35 min · 1 přestup</p>
+              </header>
+              <div class="leg"><b>10:00</b><div>Innsbruck, autobus LH3831<span>Mnichov 12:45, terminál 2</span></div></div>
+              <div class="leg"><b>16:35</b><div>Mnichov, LH458, A380<span>San Francisco 19:35, International Terminal</span></div></div>
+              <p class="note">Michael na příletech. V SF je večer, v Evropě půl páté ráno.</p>
+            </article>
+            <article class="ticket">
+              <header>
+                <strong>Zpět · čtvrtek 26. 11.</strong>
+                <p>San Francisco 8:20 → Innsbruck 13:10 v pátek · 19 h 50 min · 2 přestupy</p>
+              </header>
+              <div class="leg"><b>8:20</b><div>San Francisco, terminál 3, LH7785 United<span>Chicago 14:49</span></div></div>
+              <div class="leg"><b>18:00</b><div>Chicago, LH9269 United<span>Mnichov pátek 9:35</span></div></div>
+              <div class="leg"><b>10:25</b><div>Mnichov, autobus LH3832<span>Innsbruck pátek 13:10 · promoce</span></div></div>
+              <p class="note">Odbavení ve středu. Na terminálu 3 být v 6:00.</p>
+            </article>
+          </div>
+          <div class="card" style="margin-top: 1rem">
+            <h3>Honza</h3>
+            <p>Přilétá v sobotu 21. 11., odlet počítáme jako neděli 29. 11. Přesné časy doplníme. Road trip s Matoušem končí středa/čtvrtek.</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="fold">
+        <summary>Než vyjede road trip · 15.–20. 11.</summary>
+        <div class="fold-body">
+          <p class="who">Matouš a Michael ve městě. Volný program.</p>
+          <ul>
+            <li id="den-15" data-date="2026-11-15"><strong>Ne 15.</strong> Přílet 19:35, spánek.</li>
+            <li data-date="2026-11-16"><strong>Po 16.</strong> Měkký den.</li>
+            <li data-date="2026-11-17"><strong>Út 17.</strong> Kolo přes Golden Gate do Sausalita.</li>
+            <li data-date="2026-11-18"><strong>St 18.</strong> Presidio, Lands End.</li>
+            <li data-date="2026-11-19"><strong>Čt 19.</strong> Město bez seznamu.</li>
+            <li data-date="2026-11-20"><strong>Pá 20.</strong> Nákup, řetězy, předpověď Death Valley / Tahoe / Yosemite, stav silnic.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="fold">
+        <summary>Checklist před odjezdem</summary>
+        <div class="fold-body">
+          <p class="status" style="margin-top:0"><strong>Hotovo:</strong> ESTA oba. Michael park pass. Yosemite: 2 místa na út–st, Matouš auto.</p>
+          <ol class="actions">
+            <li><b>01</b><span><strong>Yosemite rezervace út–st.</strong> Potvrdit přesné noci a číslo kempu.</span></li>
+            <li><b>02</b><span><strong>Noc 22. Death Valley</strong> na Recreation.gov nebo motel.</span></li>
+            <li><b>03</b><span><strong>Noc 23. Tahoe</strong> — motel dřív, Díkůvzdání plní okolí.</span></li>
+            <li><b>04</b><span><strong>Auto so 21. – čt 26.</strong> SFO, řetězy povolené.</span></li>
+          </ol>
+        </div>
+      </details>
+
+      <details class="fold">
+        <summary>S sebou a zdroje</summary>
+        <div class="fold-body">
+          <p>Pohorky, vrstvy, čepice, rukavice, pláštěnka, čelovka, voda, svačiny, řetězy, Michaelův pass, pas, řidičák, powerbanka. Mapu offline ještě ve městě.</p>
+          <p style="margin-top: 0.8rem"><a href="https://mapy.com/s/jefohonera">Původní kolečko</a> · <a href="https://www.nps.gov/yose/planyourvisit/conditions.htm">Yosemite silnice</a> · <a href="https://www.nps.gov/deva/planyourvisit/conditions.htm">Death Valley</a> · <a href="https://www.recreation.gov/">Recreation.gov</a></p>
+        </div>
+      </details>
     </section>
   </main>
 
   <footer>
     <div class="wrap">
-      <p>Upraveno 8. listopadu 2026 podle Michaelova návrhu okruhu. Lety podle potvrzení Lufthansy, místní časy. Yosemite podle podmínek parku z 6. 11. 2026: Tioga a Glacier Point otevřené, lana na Half Dome dole, Upper Pines a Camp 4 na rezervaci, Lower a North Pines zavřené. Vjezdové časy NPS. Silnice se mají večer před jízdou zkontrolovat znovu — sníh mezi 11. a 12. 11. může Tiogu zavřít, okruh Yosemite → Death Valley → Tahoe ale zůstává sjízdný jižní objížďkou.</p>
-      <p><a href="https://mapy.com/s/jefohonera">Původní kolečko</a> · <a href="https://www.nps.gov/yose/planyourvisit/conditions.htm">Yosemite, stav silnic</a> · <a href="https://www.nps.gov/deva/planyourvisit/conditions.htm">Death Valley, stav</a> · <a href="https://www.recreation.gov/">Recreation.gov</a></p>
+      <p>Upraveno 8. listopadu 2026. Road trip první, lety v doplňcích. Yosemite podle Michaelovy rezervace na úterý–středu. Okruh SF → Údolí smrti → Tahoe → Yosemite → SF.</p>
     </div>
   </footer>
 
-  <a id="today-jump" hidden href="#prehled">Dnešní den</a>
+  <a id="today-jump" hidden href="#okruh">Dnešní den</a>
   <script>
     (function () {
       var key = new Date().toLocaleDateString("en-CA", { timeZone: "America/Los_Angeles" });
@@ -1069,20 +1033,23 @@
       }
 
       var stopLinks = document.querySelectorAll("[data-stop]");
-      var stopSections = {
-        sf: document.getElementById("sf"),
-        yosemite: document.getElementById("den-22"),
-        "death-valley": document.getElementById("den-23"),
-        tahoe: document.getElementById("den-24")
-      };
-
       function setActiveStop(stop) {
         for (var i = 0; i < stopLinks.length; i++) {
           var el = stopLinks[i];
-          if (el.getAttribute("data-stop") === stop) el.classList.add("is-active");
+          var val = el.getAttribute("data-stop");
+          if (val === stop || (stop === "sf" && val === "sf-back")) el.classList.add("is-active");
           else el.classList.remove("is-active");
         }
       }
+
+      var sectionMap = {
+        "den-21": "sf",
+        "den-22": "death-valley",
+        "den-23": "tahoe",
+        "den-24": "yosemite",
+        "den-25": "sf-back",
+        "den-26": "sf-back"
+      };
 
       if ("IntersectionObserver" in window) {
         var observer = new IntersectionObserver(function (entries) {
@@ -1093,18 +1060,14 @@
             }
           }
           if (!best) return;
-          var id = best.target.id;
-          if (id === "sf" || id === "den-25") setActiveStop("sf");
-          else if (id === "den-22") setActiveStop("yosemite");
-          else if (id === "den-23") setActiveStop("death-valley");
-          else if (id === "den-24") setActiveStop("tahoe");
-        }, { rootMargin: "-35% 0px -45% 0px", threshold: [0.1, 0.35, 0.6] });
+          var stop = sectionMap[best.target.id];
+          if (stop) setActiveStop(stop);
+        }, { rootMargin: "-30% 0px -50% 0px", threshold: [0.15, 0.4, 0.65] });
 
-        Object.keys(stopSections).forEach(function (k) {
-          if (stopSections[k]) observer.observe(stopSections[k]);
+        Object.keys(sectionMap).forEach(function (id) {
+          var el = document.getElementById(id);
+          if (el) observer.observe(el);
         });
-        var back = document.getElementById("den-25");
-        if (back) observer.observe(back);
       }
     })();
   </script>
