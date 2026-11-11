@@ -1,26 +1,31 @@
 # Odkazy Mapy.com
 
-## 1) Body (pins) — GPX
+## Pořadí tripů (nové)
+**Yosemite → Death Valley → Tahoe → SFO**
 
-1. Otevři [mapy.com](https://mapy.com) a přihlas se.
-2. Přetáhni soubor `california-dreaming.gpx` do mapy  
-   (nebo **Nástroje → Import GPX**).
-3. **Uložit do Moje Mapy** → **Sdílet** → získej odkaz `https://mapy.com/s/...`.
+## Neděle · Yosemite den (pins)
 
-Soubor: [`california-dreaming.gpx`](./california-dreaming.gpx)
+1. Přetáhni [`yosemite-nedele.gpx`](./yosemite-nedele.gpx) do [mapy.com](https://mapy.com)
+2. Ulož → Sdílej → `mapy.com/s/...`
 
-## 2) Trasa autem (hotový odkaz)
+### Auto trasa Bug → Valley okruh
+Yosemite Bug → Tunnel View → Bridalveil → Curry Village → Lower Fall → Bug:
 
-SFO → Ridgecrest → Furnace Creek → Mesquite Dunes → Lone Pine → South Lake Tahoe → Tunnel View → SFO:
+[Otevřít v Mapy.com](https://mapy.com/fnc/v1/route?mapset=outdoor&routeType=car_fast&start=-119.9589,37.5446&end=-119.9589,37.5446&waypoints=-119.6513,37.7156;-119.6464,37.7166;-119.5700,37.7374;-119.5969,37.7557)
 
-[Otevřít trasu v Mapy.com](https://mapy.com/fnc/v1/route?mapset=outdoor&routeType=car_fast&start=-122.3790,37.6213&end=-122.3790,37.6213&waypoints=-117.6709,35.6225;-116.8668,36.4614;-117.1150,36.6060;-118.0620,36.6063;-119.9772,38.9399;-119.6513,37.7156)
+### Mist Trail (pěšky od Happy Isles)
+Happy Isles → Vernal Footbridge (a zpět):
 
-## 3) Jen Death Valley den (body po silnici)
+[Pěší trasa](https://mapy.com/fnc/v1/route?mapset=outdoor&routeType=foot_hiking&start=-119.5580,37.7326&end=-119.5478,37.7265)
 
-Golden Canyon → Badwater → Devils Golf → Artist's Palette → Zabriskie:
+## Celý road trip autem
 
-[DV okruh autem](https://mapy.com/fnc/v1/route?mapset=outdoor&routeType=car_short&start=-116.8467,36.4209&end=-116.8117,36.4201&waypoints=-116.7671,36.2303;-116.8267,36.3189;-116.8125,36.3556)
+SFO → Yosemite Bug → Furnace Creek → Tahoe → SFO:
 
-## 4) Původní kolečko
+[Celá trasa](https://mapy.com/fnc/v1/route?mapset=outdoor&routeType=car_fast&start=-122.3790,37.6213&end=-122.3790,37.6213&waypoints=-119.9589,37.5446;-116.8668,36.4614;-119.9772,38.9399)
 
-[mapy.com/s/jefohonera](https://mapy.com/s/jefohonera)
+Celé piny: [`california-dreaming.gpx`](./california-dreaming.gpx)
+
+## Ubytování
+- [Yosemite Bug Rustic Mountain Resort](https://www.yosemitebug.com/) — Midpines, Hwy 140
+- Book: [rezervace](https://yosemitebug.cloudbeds.com/reservation/NeCFyQ?association_direct=1&referral_id=169038)
