@@ -2,48 +2,37 @@
 <gpx version="1.1" creator="california-dreaming"
   xmlns="http://www.topografix.com/GPX/1/1">
   <metadata>
-    <name>California Dreaming · Yosemite → DV → Tahoe</name>
-    <desc>21.–26. 11. 2026. Pořadí podle Michaela. Noc so+ne Yosemite Bug Midpines.</desc>
+    <name>California Dreaming · ubytování + trasa</name>
+    <desc>21.–26. 11. 2026. Booknuté noci z Booking.com.</desc>
   </metadata>
 
   <wpt lat="37.6213" lon="-122.3790">
-    <name>01 SFO · Honza 14:50 / auto</name>
-    <desc>Pickup ráno (mini-výlet) nebo před Honzou. Return st večer.</desc>
+    <name>SFO</name>
+    <desc>Honza so 14:50 · Matouš odlet čt 8:20</desc>
   </wpt>
   <wpt lat="37.5446" lon="-119.9589">
-    <name>02 Yosemite Bug · noc so+ne</name>
-    <desc>6979 Hwy 140, Midpines. ≈ 3,5–4 h z SFO. Book: yosemitebug.com</desc>
+    <name>so 21 · Yosemite Bug</name>
+    <desc>6979 Hwy 140 Midpines · conf 6672958976 · check-in 15–23 · out ne 10:00</desc>
   </wpt>
   <wpt lat="37.7156" lon="-119.6513">
-    <name>03 Tunnel View</name>
-    <desc>Ne 22. ráno.</desc>
+    <name>ne · Tunnel View</name>
   </wpt>
   <wpt lat="37.7326" lon="-119.5580">
-    <name>04 Mist Trail / Happy Isles</name>
-    <desc>Hlavní hike ne 22. Vernal footbridge (+ výš podle ledu).</desc>
+    <name>ne · Mist Trail Happy Isles</name>
+  </wpt>
+  <wpt lat="35.6336" lon="-117.6709">
+    <name>ne 22 · A Nights Inn Ridgecrest</name>
+    <desc>706 N Balsam St · conf 5601132938 · 2× queen</desc>
   </wpt>
   <wpt lat="36.4614" lon="-116.8668">
-    <name>05 Furnace Creek · noc po (+ út)</name>
-    <desc>Z Yosemite ≈ 8,5–9 h (Tioga zavřená). Příjezd po večer.</desc>
+    <name>po · Furnace Creek / DV den</name>
   </wpt>
-  <wpt lat="36.4209" lon="-116.8467">
-    <name>06 Golden Canyon parking</name>
-    <desc>út 24. hlavní DV hike.</desc>
+  <wpt lat="38.2200" lon="-119.2110">
+    <name>po 23 · Virginia Creek Bridgeport</name>
+    <desc>70847 Hwy 395 · conf 5899614127 · tent cabin</desc>
   </wpt>
-  <wpt lat="36.2303" lon="-116.7671">
-    <name>07 Badwater Basin</name>
-    <desc>út 24.</desc>
-  </wpt>
-  <wpt lat="36.4201" lon="-116.8117">
-    <name>08 Zabriskie Point</name>
-    <desc>út 24. západ.</desc>
-  </wpt>
-  <wpt lat="38.9399" lon="-119.9772">
-    <name>09 South Lake Tahoe · st</name>
-    <desc>Z DV po 395 ≈ 6–7 h. Krátce jezero, pak k SFO.</desc>
-  </wpt>
-  <wpt lat="37.6213" lon="-122.3790">
-    <name>10 SFO return · st večer</name>
-    <desc>Matouš odlet čt 8:20.</desc>
+  <wpt lat="38.9210" lon="-119.9840">
+    <name>út 24 · Adventure Lodge Tahoe</name>
+    <desc>3918 Pioneer Trail · conf 5669428635 · Queen Suite · out st 10:30</desc>
   </wpt>
 </gpx>
