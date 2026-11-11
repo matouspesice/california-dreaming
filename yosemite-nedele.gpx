@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="california-dreaming"
+  xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Yosemite · neděle 22. 11. 2026</name>
+    <desc>Z Yosemite Bug (Midpines) do Valley. Listopad: Valley floor + Mist Trail (ne high country).</desc>
+  </metadata>
+
+  <wpt lat="37.5446" lon="-119.9589">
+    <name>00 Yosemite Bug · Midpines</name>
+    <desc>6979 Hwy 140. Noc so+ne. Do Valley ≈ 45–60 min po 140.</desc>
+  </wpt>
+  <wpt lat="37.6708" lon="-119.8145">
+    <name>01 Arch Rock Entrance</name>
+    <desc>Vstup Hwy 140. Michaelův park pass.</desc>
+  </wpt>
+  <wpt lat="37.7156" lon="-119.6513">
+    <name>02 Tunnel View</name>
+    <desc>První stop ráno. El Cap + Half Dome výhled. Parking u vyhlídky.</desc>
+  </wpt>
+  <wpt lat="37.7166" lon="-119.6464">
+    <name>03 Bridalveil Fall</name>
+    <desc>Krátká chůze ≈ 20 min. Parking u silnice.</desc>
+  </wpt>
+  <wpt lat="37.7374" lon="-119.5700">
+    <name>04 Curry Village / day parking</name>
+    <desc>Park tady na Mist Trail. K Happy Isles pěšky / shuttle ≈ 1 mi. V Valley není parking přímo u trailheadu.</desc>
+  </wpt>
+  <wpt lat="37.7326" lon="-119.5580">
+    <name>05 Happy Isles · Mist Trail start</name>
+    <desc>HLAVNÍ HIKE. Vernal Fall Footbridge ≈ 1,6 mi RT / 400 ft. Když bez ledu: top of Vernal ≈ 2,4–3 mi. V listopadu část Mist Trail může být zavřená — pak John Muir winter route.</desc>
+  </wpt>
+  <wpt lat="37.7265" lon="-119.5478">
+    <name>05b Vernal Fall Footbridge · cíl A</name>
+    <desc>Bezpečný listopadový cíl. Výhled na vodopád. Otočka nebo pokračování nahoru podle ledu.</desc>
+  </wpt>
+  <wpt lat="37.7557" lon="-119.5969">
+    <name>06 Lower Yosemite Fall</name>
+    <desc>Odpoledne po Mist Trail. Snadná smyčka z Valley.</desc>
+  </wpt>
+  <wpt lat="37.7456" lon="-119.5940">
+    <name>07 Cook's Meadow / Valley View</name>
+    <desc>Half Dome z louky. Západní světlo.</desc>
+  </wpt>
+  <wpt lat="37.7435" lon="-119.5915">
+    <name>08 Yosemite Village · jídlo / WC</name>
+    <desc>Obchod, voda, toalety. Před odjezdem zpět na Bug.</desc>
+  </wpt>
+</gpx>
