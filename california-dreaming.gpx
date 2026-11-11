@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="california-dreaming"
+  xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>California Dreaming · 21.–26. 11. 2026</name>
+    <desc>Road trip SFO → Death Valley → Tahoe → Yosemite → SFO. Body pro import do Mapy.com (Nástroje → Import GPX).</desc>
+  </metadata>
+
+  <!-- SOBOTA -->
+  <wpt lat="37.6213" lon="-122.3790">
+    <name>01 SFO · auto + Honza 14:50</name>
+    <desc>Pickup ráno / odpoledne. Return st 21:00 nebo později s kluky.</desc>
+    <type>Waypoint</type>
+  </wpt>
+  <wpt lat="37.4636" lon="-122.4286">
+    <name>01b Half Moon Bay · volitelný ráno so</name>
+    <desc>Mini-výlet před Honzou. Zpátky u SFO do 13:30–14:00.</desc>
+    <type>Waypoint</type>
+  </wpt>
+  <wpt lat="35.6225" lon="-117.6709">
+    <name>02 Ridgecrest · noc so 21.</name>
+    <desc>Motel po ≈ 7 h jízdě. Tankovat tady.</desc>
+    <type>Waypoint</type>
+  </wpt>
+
+  <!-- NEDĚLE · DEATH VALLEY -->
+  <wpt lat="36.4614" lon="-116.8668">
+    <name>03 Furnace Creek Visitor Center</name>
+    <desc>Pass Michaela, voda, mapa. Kemp Furnace Creek vedle.</desc>
+    <type>Waypoint</type>
+  </wpt>
+  <wpt lat="36.4209" lon="-116.8467">
+    <name>04 Golden Canyon parking · HIKE</name>
+    <desc>Hlavní hike: Golden Canyon → Red Cathedral ≈ 3 mi / 1,5–2 h. Vault toilet u lotu.</desc>
+    <type>Waypoint</type>
+  </wpt>
+  <wpt lat="36.2303" lon="-116.7671">
+    <name>05 Badwater Basin</name>
+    <desc>Nejnižší bod USA. 10–20 min po soli, ne daleko. Velký parking.</desc>
+    <type>Waypoint</type>
+  </wpt>
+  <wpt lat="36.3189" lon="-116.8267">
+    <name>06 Devils Golf Course</name>
+    <desc>Krátký stop z pulloutu.</desc>
+    <type>Waypoint</type>
+  </wpt>
+  <wpt lat="36.3556" lon="-116.8125">
+    <name>07 Artist's Palette</name>
+    <desc>Jednosměrná Artist's Drive. Barvy odpoledne.</desc>
+    <type>Waypoint</type>
+  </wpt>
+  <wpt lat="36.4201" lon="-116.8117">
+    <name>08 Zabriskie Point · západ</name>
+    <desc>Nejhezčí sunset spot. Velký parking + vault toilet.</desc>
+    <type>Waypoint</type>
+  </wpt>
+
+  <!-- PONDĚLÍ · VEN + TAHOE -->
+  <wpt lat="36.6060" lon="-117.1150">
+    <name>09 Mesquite Flat Dunes · po ráno</name>
+    <desc>Bonus před odjezdem na 395. Parking u dun, ≈ 30 min od Furnace Creek.</desc>
+    <type>Waypoint</type>
+  </wpt>
+  <wpt lat="36.6063" lon="-118.0620">
+    <name>10 Lone Pine · oběd / benzin</name>
+    <desc>Na 395 sever. Alabama Hills volitelně.</desc>
+    <type>Waypoint</type>
+  </wpt>
+  <wpt lat="38.9399" lon="-119.9772">
+    <name>11 South Lake Tahoe · noc po 23.</name>
+    <desc>Zephyr Cove / Tahoe Valley / motel Stateline.</desc>
+    <type>Waypoint</type>
+  </wpt>
+  <wpt lat="39.0085" lon="-119.9485">
+    <name>11b Zephyr Cove Campground</name>
+    <desc>Year-round kemp. Recreation.gov</desc>
+    <type>Waypoint</type>
+  </wpt>
+
+  <!-- ÚTERÝ–STŘEDA · YOSEMITE -->
+  <wpt lat="37.7156" lon="-119.6513">
+    <name>12 Tunnel View</name>
+    <desc>První stop do Valley. Út odpoledne + st volitelně.</desc>
+    <type>Waypoint</type>
+  </wpt>
+  <wpt lat="37.7166" lon="-119.6464">
+    <name>13 Bridalveil Fall</name>
+    <desc>Krátká chůze z parkingu.</desc>
+    <type>Waypoint</type>
+  </wpt>
+  <wpt lat="37.7456" lon="-119.5940">
+    <name>14 Yosemite Valley · louky / Half Dome view</name>
+    <desc>Valley View / Cook's Meadow. Michaelův kemp v údolí.</desc>
+    <type>Waypoint</type>
+  </wpt>
+  <wpt lat="37.7557" lon="-119.5969">
+    <name>15 Lower Yosemite Fall</name>
+    <desc>Snadná smyčka z Valley.</desc>
+    <type>Waypoint</type>
+  </wpt>
+  <wpt lat="37.7326" lon="-119.5580">
+    <name>16 Mist Trail / Vernal Fall start</name>
+    <desc>St dopoledne. Happy Isles trailhead. Dolní část Mist Trail.</desc>
+    <type>Waypoint</type>
+  </wpt>
+</gpx>
