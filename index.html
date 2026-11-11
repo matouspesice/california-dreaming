@@ -4,7 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>California Dreaming · road trip 21.–25. 11. 2026</title>
-  <meta name="description" content="Road trip Matouše, Honzy a Michaela: San Francisco → Údolí smrti → Tahoe → Yosemite a zpět, 21.–25. listopadu 2026.">
+  <meta name="description" content="Soukromý road trip plán.">
+  <meta name="robots" content="noindex,nofollow">
   <meta name="theme-color" content="#13281f">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -639,9 +640,144 @@
       details.fold { break-inside: avoid; }
       details.fold:not([open]) .fold-body { display: block; }
     }
+
+    html.is-locked body > *:not(#gate) { display: none !important; }
+    #gate {
+      display: none;
+      min-height: 100vh;
+      margin: 0;
+      padding: 2rem 1rem;
+      background:
+        radial-gradient(ellipse 80% 50% at 20% 0%, #2a4a3c 0%, transparent 55%),
+        radial-gradient(ellipse 70% 45% at 90% 100%, #3d2a1f 0%, transparent 50%),
+        var(--pine-deep);
+      color: #f6f1e7;
+      align-items: center;
+      justify-content: center;
+    }
+    html.is-locked #gate { display: flex; }
+    #gate .gate-card {
+      width: min(24rem, 100%);
+      text-align: left;
+    }
+    #gate .gate-kicker {
+      margin: 0 0 0.5rem;
+      color: var(--gold-soft);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+    #gate h1 {
+      font-family: var(--serif);
+      font-weight: 680;
+      font-size: clamp(2.2rem, 8vw, 3.2rem);
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      margin: 0 0 0.75rem;
+      color: #f6f1e7;
+    }
+    #gate p {
+      margin: 0 0 1.25rem;
+      color: #cfc4b2;
+      font-size: 1.05rem;
+    }
+    #gate form {
+      display: grid;
+      gap: 0.75rem;
+    }
+    #gate input[type="password"] {
+      width: 100%;
+      border: 1px solid color-mix(in srgb, #e7d7b0 35%, transparent);
+      background: color-mix(in srgb, #fffdf8 8%, transparent);
+      color: #f6f1e7;
+      font: inherit;
+      padding: 0.85rem 1rem;
+      border-radius: 10px;
+      outline: none;
+    }
+    #gate input[type="password"]:focus {
+      border-color: var(--gold-soft);
+    }
+    #gate input[type="password"]::placeholder { color: #9a9080; }
+    #gate button {
+      border: 0;
+      background: var(--gold-soft);
+      color: var(--pine-deep);
+      font: inherit;
+      font-weight: 700;
+      padding: 0.85rem 1rem;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    #gate button:hover { filter: brightness(1.05); }
+    #gate .gate-err {
+      margin: 0;
+      min-height: 1.3em;
+      color: #e8b4a4;
+      font-size: 0.95rem;
+    }
   </style>
+  <script>
+    (function () {
+      var KEY = "cd-auth-v1";
+      var HASH = "34427878c562b4a587ee45895e61a7bfc44c9c1a2ce4ec9c98e8bbd514c14d67";
+      function unlocked() {
+        try { return sessionStorage.getItem(KEY) === HASH; } catch (e) { return false; }
+      }
+      if (!unlocked()) document.documentElement.classList.add("is-locked");
+      window.__cdGate = {
+        KEY: KEY,
+        HASH: HASH,
+        async digest(text) {
+          var data = new TextEncoder().encode(text);
+          var buf = await crypto.subtle.digest("SHA-256", data);
+          return Array.from(new Uint8Array(buf)).map(function (b) {
+            return b.toString(16).padStart(2, "0");
+          }).join("");
+        }
+      };
+    })();
+  </script>
 </head>
 <body>
+  <section id="gate" aria-label="Vstup">
+    <div class="gate-card">
+      <p class="gate-kicker">Soukromý plán</p>
+      <h1>California<br>Dreaming</h1>
+      <p>Stránka je za heslem. Zadej heslo od Matouše.</p>
+      <form id="gate-form" autocomplete="current-password">
+        <label class="visually-hidden" for="gate-pass" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Heslo</label>
+        <input id="gate-pass" name="password" type="password" placeholder="Heslo" required autofocus>
+        <button type="submit">Otevřít</button>
+        <p class="gate-err" id="gate-err" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+  <script>
+    (function () {
+      var gate = window.__cdGate;
+      if (!gate) return;
+      var form = document.getElementById("gate-form");
+      var input = document.getElementById("gate-pass");
+      var err = document.getElementById("gate-err");
+      if (!document.documentElement.classList.contains("is-locked")) return;
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        err.textContent = "";
+        gate.digest(input.value).then(function (h) {
+          if (h !== gate.HASH) {
+            err.textContent = "Špatné heslo.";
+            input.select();
+            return;
+          }
+          try { sessionStorage.setItem(gate.KEY, gate.HASH); } catch (err2) {}
+          document.documentElement.classList.remove("is-locked");
+          input.value = "";
+        });
+      });
+    })();
+  </script>
   <a class="skip" href="#okruh">Přeskočit na okruh</a>
   <header class="site">
     <div class="wrap">
@@ -843,7 +979,7 @@
       <article class="day" id="den-21" data-date="2026-11-21">
         <p class="tag">Start</p>
         <h3>Sobota 21. · SFO → Yosemite Bug</h3>
-        <p class="meta">Honza 14:50. Noc: <strong>Yosemite Bug</strong> · conf. 6672958976 · check-in 15:00–23:00.</p>
+        <p class="meta">Honza 14:50. Noc: <a href="https://www.booking.com/hotel/us/yosemite-bug-rustic-mountain-resort.cs.html">Yosemite Bug</a> · conf. 6672958976 · check-in 15:00–23:00.</p>
         <ul>
           <li>Auto ráno nebo před Honzou. Odjezd ≈ 17:30 → Hwy 140 → Midpines ≈ 3,5–4 h.</li>
           <li>Příjezd Bug ≈ 21:00–21:30. Quadruple shared bath, 3 dospělí.</li>
@@ -853,7 +989,7 @@
       <article class="day" id="den-22" data-date="2026-11-22">
         <p class="tag hard">Yosemite · pak Ridgecrest</p>
         <h3>Neděle 22. · Valley + Mist Trail</h3>
-        <p class="meta">Check-out Bug <strong>do 10:00</strong>. Večer noc v Ridgecrestu (A Nights Inn, conf. 5601132938). <a href="yosemite-nedele.gpx">GPX</a> · <a href="https://mapy.com/fnc/v1/route?mapset=outdoor&amp;routeType=car_fast&amp;start=-119.9589,37.5446&amp;end=-119.9589,37.5446&amp;waypoints=-119.6513,37.7156;-119.6464,37.7166;-119.5700,37.7374;-119.5969,37.7557">Mapy okruh</a></p>
+        <p class="meta">Check-out Bug <strong>do 10:00</strong>. Večer noc v Ridgecrestu (<a href="https://www.booking.com/hotel/us/a-nights-inn.cs.html">A Nights Inn</a>, conf. 5601132938). <a href="yosemite-nedele.gpx">GPX</a> · <a href="https://mapy.com/fnc/v1/route?mapset=outdoor&amp;routeType=car_fast&amp;start=-119.9589,37.5446&amp;end=-119.9589,37.5446&amp;waypoints=-119.6513,37.7156;-119.6464,37.7166;-119.5700,37.7374;-119.5969,37.7557">Mapy okruh</a></p>
         <ul>
           <li>Brzy do Valley: Tunnel View → Bridalveil → Curry Village → <strong>Mist Trail / Vernal Footbridge</strong> → Lower Fall.</li>
           <li>Odpoledne pryč z parku → jih k Ridgecrestu (přes Fresno / 14). Check-in A Nights Inn od 14:00 — přijedete spíš večer, OK.</li>
@@ -864,7 +1000,7 @@
       <article class="day" id="den-23" data-date="2026-11-23">
         <p class="tag">Údolí smrti</p>
         <h3>Pondělí 23. · DV den → Bridgeport</h3>
-        <p class="meta">Ráno z Ridgecrestu do Furnace Creek ≈ 2,5 h. Večer noc: <strong>Virginia Creek Settlement</strong> Bridgeport (conf. 5899614127) — stan na 395.</p>
+        <p class="meta">Ráno z Ridgecrestu do Furnace Creek ≈ 2,5 h. Večer noc: <a href="https://www.booking.com/hotel/us/virginia-creek-settlement.cs.html">Virginia Creek Settlement</a> Bridgeport (conf. 5899614127) — stan na 395.</p>
         <ul>
           <li>Golden Canyon → Badwater → Artist's → Zabriskie. Pak 190 → 395 N → Bridgeport.</li>
           <li>Check-in 15:00–22:00; po 19:00 volat +1 760-932-7780. Stan bez topení — spacáky.</li>
@@ -875,7 +1011,7 @@
       <article class="day" id="den-24" data-date="2026-11-24">
         <p class="tag">Tahoe</p>
         <h3>Úterý 24. · Bridgeport → South Lake Tahoe</h3>
-        <p class="meta">Noc: <strong>Adventure Lodge</strong> · conf. 5669428635 · check-in od 16:00 · Queen Suite.</p>
+        <p class="meta">Noc: <a href="https://www.booking.com/hotel/us/adventure-lodge-south-lake-tahoe.cs.html">Adventure Lodge</a> · conf. 5669428635 · check-in od 16:00 · Queen Suite.</p>
         <ul>
           <li>395 N / 89 / 50 k jezeru. Krátce břeh / vyhlídka.</li>
           <li>3918 Pioneer Trail · self check-in + formulář předem · +1 925-848-4564.</li>
@@ -918,7 +1054,7 @@
           <tbody>
             <tr class="park">
               <td><strong>so 21.</strong></td>
-              <td><a href="https://www.yosemitebug.com/">Yosemite Bug</a><br><span style="color:var(--muted);font-size:0.9em">Midpines</span></td>
+              <td><a href="https://www.booking.com/hotel/us/yosemite-bug-rustic-mountain-resort.cs.html">Yosemite Bug</a><br><span style="color:var(--muted);font-size:0.9em">Midpines</span></td>
               <td>Quadruple · shared bath</td>
               <td>15:00–23:00<br>→ ne 10:00</td>
               <td>6979 Highway 140<br>CA 95345</td>
@@ -926,7 +1062,7 @@
             </tr>
             <tr class="park">
               <td><strong>ne 22.</strong></td>
-              <td>A Nights Inn<br><span style="color:var(--muted);font-size:0.9em">Ridgecrest</span></td>
+              <td><a href="https://www.booking.com/hotel/us/a-nights-inn.cs.html">A Nights Inn</a><br><span style="color:var(--muted);font-size:0.9em">Ridgecrest</span></td>
               <td>Deluxe · 2× queen</td>
               <td>od 14:00<br>→ po 11:00</td>
               <td>706 N Balsam St<br>CA 93555</td>
@@ -934,7 +1070,7 @@
             </tr>
             <tr class="park">
               <td><strong>po 23.</strong></td>
-              <td>Virginia Creek Settlement<br><span style="color:var(--muted);font-size:0.9em">Bridgeport · 395</span></td>
+              <td><a href="https://www.booking.com/hotel/us/virginia-creek-settlement.cs.html">Virginia Creek Settlement</a><br><span style="color:var(--muted);font-size:0.9em">Bridgeport · 395</span></td>
               <td>Tent cabin (4)</td>
               <td>15:00–22:00<br>→ út 11:00</td>
               <td>70847 Highway 395<br>CA 93517</td>
@@ -942,7 +1078,7 @@
             </tr>
             <tr class="park">
               <td><strong>út 24.</strong></td>
-              <td>Adventure Lodge<br><span style="color:var(--muted);font-size:0.9em">South Lake Tahoe</span></td>
+              <td><a href="https://www.booking.com/hotel/us/adventure-lodge-south-lake-tahoe.cs.html">Adventure Lodge</a><br><span style="color:var(--muted);font-size:0.9em">South Lake Tahoe</span></td>
               <td>Queen Suite</td>
               <td>od 16:00<br>→ st 10:30</td>
               <td>3918 Pioneer Trail<br>CA 96150</td>
