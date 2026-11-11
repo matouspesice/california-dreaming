@@ -4,7 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>California Dreaming · road trip 21.–25. 11. 2026</title>
-  <meta name="description" content="Road trip Matouše, Honzy a Michaela: San Francisco → Údolí smrti → Tahoe → Yosemite a zpět, 21.–25. listopadu 2026.">
+  <meta name="description" content="Soukromý road trip plán.">
+  <meta name="robots" content="noindex,nofollow">
   <meta name="theme-color" content="#13281f">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -639,9 +640,144 @@
       details.fold { break-inside: avoid; }
       details.fold:not([open]) .fold-body { display: block; }
     }
+
+    html.is-locked body > *:not(#gate) { display: none !important; }
+    #gate {
+      display: none;
+      min-height: 100vh;
+      margin: 0;
+      padding: 2rem 1rem;
+      background:
+        radial-gradient(ellipse 80% 50% at 20% 0%, #2a4a3c 0%, transparent 55%),
+        radial-gradient(ellipse 70% 45% at 90% 100%, #3d2a1f 0%, transparent 50%),
+        var(--pine-deep);
+      color: #f6f1e7;
+      align-items: center;
+      justify-content: center;
+    }
+    html.is-locked #gate { display: flex; }
+    #gate .gate-card {
+      width: min(24rem, 100%);
+      text-align: left;
+    }
+    #gate .gate-kicker {
+      margin: 0 0 0.5rem;
+      color: var(--gold-soft);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+    #gate h1 {
+      font-family: var(--serif);
+      font-weight: 680;
+      font-size: clamp(2.2rem, 8vw, 3.2rem);
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      margin: 0 0 0.75rem;
+      color: #f6f1e7;
+    }
+    #gate p {
+      margin: 0 0 1.25rem;
+      color: #cfc4b2;
+      font-size: 1.05rem;
+    }
+    #gate form {
+      display: grid;
+      gap: 0.75rem;
+    }
+    #gate input[type="password"] {
+      width: 100%;
+      border: 1px solid color-mix(in srgb, #e7d7b0 35%, transparent);
+      background: color-mix(in srgb, #fffdf8 8%, transparent);
+      color: #f6f1e7;
+      font: inherit;
+      padding: 0.85rem 1rem;
+      border-radius: 10px;
+      outline: none;
+    }
+    #gate input[type="password"]:focus {
+      border-color: var(--gold-soft);
+    }
+    #gate input[type="password"]::placeholder { color: #9a9080; }
+    #gate button {
+      border: 0;
+      background: var(--gold-soft);
+      color: var(--pine-deep);
+      font: inherit;
+      font-weight: 700;
+      padding: 0.85rem 1rem;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    #gate button:hover { filter: brightness(1.05); }
+    #gate .gate-err {
+      margin: 0;
+      min-height: 1.3em;
+      color: #e8b4a4;
+      font-size: 0.95rem;
+    }
   </style>
+  <script>
+    (function () {
+      var KEY = "cd-auth-v1";
+      var HASH = "34427878c562b4a587ee45895e61a7bfc44c9c1a2ce4ec9c98e8bbd514c14d67";
+      function unlocked() {
+        try { return sessionStorage.getItem(KEY) === HASH; } catch (e) { return false; }
+      }
+      if (!unlocked()) document.documentElement.classList.add("is-locked");
+      window.__cdGate = {
+        KEY: KEY,
+        HASH: HASH,
+        async digest(text) {
+          var data = new TextEncoder().encode(text);
+          var buf = await crypto.subtle.digest("SHA-256", data);
+          return Array.from(new Uint8Array(buf)).map(function (b) {
+            return b.toString(16).padStart(2, "0");
+          }).join("");
+        }
+      };
+    })();
+  </script>
 </head>
 <body>
+  <section id="gate" aria-label="Vstup">
+    <div class="gate-card">
+      <p class="gate-kicker">Soukromý plán</p>
+      <h1>California<br>Dreaming</h1>
+      <p>Stránka je za heslem. Zadej heslo od Matouše.</p>
+      <form id="gate-form" autocomplete="current-password">
+        <label class="visually-hidden" for="gate-pass" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Heslo</label>
+        <input id="gate-pass" name="password" type="password" placeholder="Heslo" required autofocus>
+        <button type="submit">Otevřít</button>
+        <p class="gate-err" id="gate-err" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+  <script>
+    (function () {
+      var gate = window.__cdGate;
+      if (!gate) return;
+      var form = document.getElementById("gate-form");
+      var input = document.getElementById("gate-pass");
+      var err = document.getElementById("gate-err");
+      if (!document.documentElement.classList.contains("is-locked")) return;
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        err.textContent = "";
+        gate.digest(input.value).then(function (h) {
+          if (h !== gate.HASH) {
+            err.textContent = "Špatné heslo.";
+            input.select();
+            return;
+          }
+          try { sessionStorage.setItem(gate.KEY, gate.HASH); } catch (err2) {}
+          document.documentElement.classList.remove("is-locked");
+          input.value = "";
+        });
+      });
+    })();
+  </script>
   <a class="skip" href="#okruh">Přeskočit na okruh</a>
   <header class="site">
     <div class="wrap">
