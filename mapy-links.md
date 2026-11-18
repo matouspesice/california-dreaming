@@ -20,12 +20,14 @@ Happy Isles → Vernal Footbridge (a zpět):
 
 ## Celý road trip autem
 
-SFO → Yosemite Bug → Furnace Creek → Tahoe → SFO:
+SFO → Yosemite Bug → Bakersfield → Furnace Creek → Lone Pine → Tahoe → SFO:
 
-[Celá trasa](https://mapy.com/fnc/v1/route?mapset=outdoor&routeType=car_fast&start=-122.3790,37.6213&end=-122.3790,37.6213&waypoints=-119.9589,37.5446;-116.8668,36.4614;-119.9772,38.9399)
+[Celá trasa](https://mapy.com/fnc/v1/route?mapset=outdoor&routeType=car_fast&start=-122.3790,37.6213&end=-122.3790,37.6213&waypoints=-119.9589,37.5446;-119.0023,35.3580;-116.8668,36.4614;-118.0730,36.6050;-119.9770,38.9395)
 
 Celé piny: [`california-dreaming.gpx`](./california-dreaming.gpx)
 
 ## Ubytování
-- [Yosemite Bug Rustic Mountain Resort](https://www.yosemitebug.com/) — Midpines, Hwy 140
-- Book: [rezervace](https://yosemitebug.cloudbeds.com/reservation/NeCFyQ?association_direct=1&referral_id=169038)
+- [Yosemite Bug](https://www.yosemitebug.com/) — Midpines, Hwy 140 · conf 6672958976
+- Quality Inn & Suites — Bakersfield · conf 5135736696
+- Whitney Portal Hotel & Hostel — Lone Pine · conf 5900702149
+- Econo Lodge Heavenly Village — South Lake Tahoe · conf 6026425614

@@ -12,7 +12,7 @@
   </wpt>
   <wpt lat="37.5446" lon="-119.9589">
     <name>so 21 · Yosemite Bug</name>
-    <desc>6979 Hwy 140 Midpines · conf 6672958976 · check-in 15–23 · out ne 10:00</desc>
+    <desc>6979 Hwy 140 Midpines · conf 6672958976 · check-in 15–23 · out ne 10:00 · $95</desc>
   </wpt>
   <wpt lat="37.7156" lon="-119.6513">
     <name>ne · Tunnel View</name>
@@ -20,19 +20,19 @@
   <wpt lat="37.7326" lon="-119.5580">
     <name>ne · Mist Trail Happy Isles</name>
   </wpt>
-  <wpt lat="35.6336" lon="-117.6709">
-    <name>ne 22 · A Nights Inn Ridgecrest</name>
-    <desc>706 N Balsam St · conf 5601132938 · 2× queen</desc>
+  <wpt lat="35.3580" lon="-119.0023">
+    <name>ne 22 · Quality Inn Bakersfield</name>
+    <desc>200 Union Ave · conf 5135736696 · 2× queen · $73</desc>
   </wpt>
   <wpt lat="36.4614" lon="-116.8668">
     <name>po · Furnace Creek / DV den</name>
   </wpt>
-  <wpt lat="38.2200" lon="-119.2110">
-    <name>po 23 · Virginia Creek Bridgeport</name>
-    <desc>70847 Hwy 395 · conf 5899614127 · tent cabin</desc>
+  <wpt lat="36.6050" lon="-118.0730">
+    <name>po 23 · Whitney Portal Lone Pine</name>
+    <desc>238 S Main · conf 5900702149 · 2× queen · $117</desc>
   </wpt>
-  <wpt lat="38.9210" lon="-119.9840">
-    <name>út 24 · Adventure Lodge Tahoe</name>
-    <desc>3918 Pioneer Trail · conf 5669428635 · Queen Suite · out st 10:30</desc>
+  <wpt lat="38.9395" lon="-119.9770">
+    <name>út 24 · Econo Lodge Tahoe</name>
+    <desc>3860 Lake Tahoe Blvd · conf 6026425614 · 2× queen · out st 11:00 · $96</desc>
   </wpt>
 </gpx>
